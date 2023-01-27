@@ -1,0 +1,83 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - chapters:
+    - file: About_Dolphin
+
+  # ###################
+  # - caption: ARTIFICIAL INTELLIGENCE
+  #   chapters:
+
+  #   # 인공지능 기초
+  #   - file: contents/인공지능_기초/00_개요
+  #     sections:
+  #     - file: contents/인공지능_기초/01_인공지능과_기계학습
+  #     - file: contents/인공지능_기초/02_기계는_어떻게_학습할까
+  #     - file: contents/인공지능_기초/03_신경망과_딥러닝
+  #     - file: contents/인공지능_기초/04_인공지능_기술동향
+
+  #   # 머신러닝
+  #   - file: contents/머신러닝/00_개요
+  #     # sections:
+
+  #   # 딥러닝
+  #   - file: contents/딥러닝/00_개요
+  #     sections:
+  #     - file: contents/딥러닝/01_DNN모델과_딥러닝
+  #     - file: contents/딥러닝/02_CNN모델과_컴퓨터비전
+  #     - file: contents/딥러닝/03_RNN모델과_시계열분석
+  #     - file: contents/딥러닝/04_Attention_알고리즘
+  #     - file: contents/딥러닝/05_GAN_알고리즘
+  #     - file: contents/딥러닝/06_강화학습_알고리즘
+
+  # # AWS DEEPRACER
+  #   - file: contents/AWS_DEEPRACER/00_개요
+  #     # sections:
+
+
+  # ###################
+  # - caption: DEVELOPER
+  #   chapters:
+  #   - file: contents/DEVELOP/IT_기초
+  #   - file: contents/DEVELOP/AWS 
+  #   - file: contents/DEVELOP/Linux_Ubuntu
+  #   - file: contents/DEVELOP/Git_Github
+  #   - file: contents/DEVELOP/Docker
+  #   - file: contents/DEVELOP/정규식
+  #   # - file: contents/DEVELOP/Python
+  #   - file: contents/DEVELOP/HTML_CSS
+  #   # - file: contents/DEVELOP/JavaScript
+  #   - file: contents/DEVELOP/utils
+  #   - file: contents/DEVELOP/VSCode
+  #   - file: contents/DEVELOP/Markdown
+  #   - file: contents/DEVELOP/Jupyter
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # - caption: PROGRAMMING LANGUAGE
+  #   chapters:
+
+
+  # - caption: samples
+  #   chapters:
+  #   - file: contents/samples/markdown-notebooks
+  #   - file: contents/samples/markdown
+  #     sections:
+  #     - file: contents/samples/mymarkdownfile
