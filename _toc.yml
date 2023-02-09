@@ -7,36 +7,70 @@ parts:
   - chapters:
     - file: About_Dolphin
 
-  # ###################
-  # - caption: ARTIFICIAL INTELLIGENCE
-  #   chapters:
+  ###################
+  - caption: Basic Course
+    chapters:
 
-  #   # 인공지능 기초
-  #   - file: contents/인공지능_기초/00_개요
-  #     sections:
-  #     - file: contents/인공지능_기초/01_인공지능과_기계학습
-  #     - file: contents/인공지능_기초/02_기계는_어떻게_학습할까
-  #     - file: contents/인공지능_기초/03_신경망과_딥러닝
-  #     - file: contents/인공지능_기초/04_인공지능_기술동향
+    # AWS_Deepracer_Overview
+    - file: Basic/AWS_Deepracer_Overview/00_개요
+      # sections:
+      # - file: Basic/AWS_Deepracer_Overview/01_인공지능과_기계학습
+      # - file: Basic/AWS_Deepracer_Overview/02_기계는_어떻게_학습할까
 
-  #   # 머신러닝
-  #   - file: contents/머신러닝/00_개요
-  #     # sections:
+    # Model_Training
+    - file: Basic/Model_Training/00_개요
+      # sections:
+      # - file: Basic/Model_Training/01_DNN모델과_딥러닝
+      # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
 
-  #   # 딥러닝
-  #   - file: contents/딥러닝/00_개요
-  #     sections:
-  #     - file: contents/딥러닝/01_DNN모델과_딥러닝
-  #     - file: contents/딥러닝/02_CNN모델과_컴퓨터비전
-  #     - file: contents/딥러닝/03_RNN모델과_시계열분석
-  #     - file: contents/딥러닝/04_Attention_알고리즘
-  #     - file: contents/딥러닝/05_GAN_알고리즘
-  #     - file: contents/딥러닝/06_강화학습_알고리즘
+    # Reinforcement_Learning
+    - file: Basic/Reinforcement_Learning/00_개요
+      # sections:
+      # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
+      # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
 
-  # # AWS DEEPRACER
-  #   - file: contents/AWS_DEEPRACER/00_개요
-  #     # sections:
 
+    # Python_for_Deepracer
+    - file: Basic/Python_for_Deepracer/00_개요
+      # sections:
+      # - file: Basic/Python_for_Deepracer/01_DNN모델과_딥러닝
+      # - file: Basic/Python_for_Deepracer/02_CNN모델과_컴퓨터비전
+  
+    # Reward_Function
+    - file: Basic/Reward_Function/00_개요
+      # sections:
+      # - file: Basic/Reward_Function/01_DNN모델과_딥러닝
+      # - file: Basic/Reward_Function/02_CNN모델과_컴퓨터비전
+  
+    # Log_Analysis
+    - file: Basic/Log_Analysis/00_개요
+      # sections:
+      # - file: Basic/Log_Analysis/01_DNN모델과_딥러닝
+      # - file: Basic/Log_Analysis/02_CNN모델과_컴퓨터비전
+
+    # Physical_Car
+    - file: Basic/Physical_Car/00_개요
+      # sections:
+      # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
+      # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
+
+    # Local_Training
+    - file: Basic/Local_Training/00_개요
+      # sections:
+      # - file: Basic/Local_Training/01_DNN모델과_딥러닝
+      # - file: Basic/Local_Training/02_CNN모델과_컴퓨터비전
+
+    # Multi_User_Mode
+    - file: Basic/Multi_User_Mode/00_개요
+      # sections:
+      # - file: Basic/Multi_User_Mode/01_DNN모델과_딥러닝
+      # - file: Basic/Multi_User_Mode/02_CNN모델과_컴퓨터비전
+
+    # Tips
+    - file: Basic/Tips/00_개요
+      # sections:
+      # - file: Basic/Tips/01_DNN모델과_딥러닝
+      # - file: Basic/Tips/02_CNN모델과_컴퓨터비전  
 
   # ###################
   # - caption: DEVELOPER
