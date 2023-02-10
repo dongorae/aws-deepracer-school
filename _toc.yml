@@ -17,7 +17,8 @@ parts:
       - file: Basic/AWS_Deepracer_Overview/02_커리큘럼_소개
       - file: Basic/AWS_Deepracer_Overview/03_Deepracer_워크플로우
       - file: Basic/AWS_Deepracer_Overview/04_클라우드_컴퓨팅과_AWS
-
+      - file: Basic/AWS_Deepracer_Overview/05_AWS_가입
+      
     # Model_Training
     - file: Basic/Model_Training/01_개요
       # sections:
