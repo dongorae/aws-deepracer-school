@@ -43,12 +43,13 @@ parts:
       - file: Basic/Python_for_Deepracer/03_출력과_변수
       - file: Basic/Python_for_Deepracer/04_자료형
       - file: Basic/Python_for_Deepracer/05_연산
-      - file: Basic/Python_for_Deepracer/06_ math_라이브러리
-      - file: Basic/Python_for_Deepracer/07_if_조건문
-      - file: Basic/Python_for_Deepracer/08_for_반복문
-      - file: Basic/Python_for_Deepracer/09_while_조건반복문
-      - file: Basic/Python_for_Deepracer/10_함수
-      - file: Basic/Python_for_Deepracer/11_클래스
+      - file: Basic/Python_for_Deepracer/06_리스트_다루기
+      - file: Basic/Python_for_Deepracer/07_ math_라이브러리
+      - file: Basic/Python_for_Deepracer/08_if_조건문
+      - file: Basic/Python_for_Deepracer/09_for_반복문
+      - file: Basic/Python_for_Deepracer/10_while_조건반복문
+      - file: Basic/Python_for_Deepracer/11_함수
+      - file: Basic/Python_for_Deepracer/12_클래스
   
     # Reward_Function
     - file: Basic/Reward_Function/01_개요
