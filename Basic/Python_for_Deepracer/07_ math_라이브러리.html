@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>출력과 변수 &#8212; AWS Deepracer School</title>
+    <title>math Library &#8212; AWS Deepracer School</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="자료형" href="04_%EC%9E%90%EB%A3%8C%ED%98%95.html" />
-    <link rel="prev" title="Python과 Colab" href="02_python%EA%B3%BC_colab.html" />
+    <link rel="next" title="if 조건문" href="08_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8.html" />
+    <link rel="prev" title="리스트 다루기" href="06_%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EB%8B%A4%EB%A3%A8%EA%B8%B0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -204,8 +204,8 @@ const thebe_selector_output = ".output, .cell_output"
      Python과 Colab
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_%EC%B6%9C%EB%A0%A5%EA%B3%BC_%EB%B3%80%EC%88%98.html">
      출력과 변수
     </a>
    </li>
@@ -224,8 +224,8 @@ const thebe_selector_output = ".output, .cell_output"
      리스트 다루기
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07_%20math_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      math Library
     </a>
    </li>
@@ -341,7 +341,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Python_for_Deepracer/03_출력과_변수.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Python_for_Deepracer/07_ math_라이브러리.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -384,7 +384,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Basic/Python_for_Deepracer/03_출력과_변수.ipynb"
+        <a href="../../_sources/Basic/Python_for_Deepracer/07_ math_라이브러리.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -444,18 +444,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#print">
-   print 함수
+  <a class="reference internal nav-link" href="#library">
+   Library 란
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math">
+   math 라이브러리 가져오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pi-e">
+   원주율(pi)과 자연상수(e)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   각도 단위변환
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atan">
+   atan 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sin-cos-tan">
+   삼각함수 sin,cos,tan
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   주석 달기
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   변수 대입
+   로그함수
   </a>
  </li>
 </ul>
@@ -467,7 +487,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>출력과 변수</h1>
+                <h1>math Library</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -478,18 +498,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#print">
-   print 함수
+  <a class="reference internal nav-link" href="#library">
+   Library 란
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#math">
+   math 라이브러리 가져오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pi-e">
+   원주율(pi)과 자연상수(e)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   각도 단위변환
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atan">
+   atan 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sin-cos-tan">
+   삼각함수 sin,cos,tan
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   주석 달기
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   변수 대입
+   로그함수
   </a>
  </li>
 </ul>
@@ -502,189 +542,241 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>출력과 변수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<section id="print">
-<h2>print 함수<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="math-library">
+<h1>math Library<a class="headerlink" href="#math-library" title="Permalink to this headline">#</a></h1>
+<section id="library">
+<h2>Library 란<a class="headerlink" href="#library" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Library(라이브러리)</p></li>
+</ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print(출력내용)</span></code> : 내용을 출력</p></li>
+<li><p>“Library”는 프로그래밍 언어에서 이미 작성된 코드의 모음을 말합니다.</p></li>
+<li><p>특정 기능을 수행하는 프로그램이나 기능을 미리 작성하여 저장하고, 다른 프로그램에서 이를 가져다 쓸 수 있는 것입니다.</p></li>
+<li><p>파이썬에서는 기본적으로 포함된 Library와 외부 Library 두 가지 종류의 Library가 있습니다.</p></li>
+<li><p>기본적으로 포함된 Library는 파이썬을 설치할 때 자동으로 설치되는 Library이고, 외부 Library는 파이썬을 설치한 후에 추가적으로 설치하여 사용할 수 있는 Library입니다.</p></li>
+<li><p>Library를 사용하면 프로그램을 작성하는 데 필요한 많은 기능을 간단하게 사용할 수 있어서, 프로그램을 개발하는데 많은 시간을 절약할 수 있습니다.
+<br><br></p></li>
+</ul>
+<ol class="simple">
+<li><p>math 라이브러리</p></li>
+</ol>
+<ul class="simple">
+<li><p>파이썬 내장 라이브러리 중 하나로, 수학과 관련된 기능들을 제공한다.
+<br><br></p></li>
+</ul>
+<ol class="simple">
+<li><p>라이브러리 사용방법</p></li>
+</ol>
+<ul class="simple">
+<li><p>라이브러리를 불러오는 방법 :  <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">라이브러리명</span></code></p>
+<ul>
+<li><p>(ex) <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code></p></li>
+</ul>
+</li>
+<li><p>라이브러리 내의 변수 등의 특정 기능을 호출할 때는, 라이브러리명 뒤에 점(.)을 붙여서 호출</p>
+<ul>
+<li><p>(ex) <code class="docutils literal notranslate"><span class="pre">math.log()</span></code> : math 라이브러리의 log함수</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="math">
+<h2>math 라이브러리 가져오기<a class="headerlink" href="#math" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 라이브러리 가져오기</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pi-e">
+<h2>원주율(pi)과 자연상수(e)<a class="headerlink" href="#pi-e" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 원주율</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오일러 자연상수</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>각도 단위변환<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">math.degrees(라디안각)</span></code> : 라디안각을 60분법각으로 변환</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.radians(60분법각)</span></code> : 60분법각을 라디안각으로 변환</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 라디안각을 60분법각으로 변환</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180.0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 60분법각을 라디안각으로 변환</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World
-3
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="atan">
+<h2>atan 함수<a class="headerlink" href="#atan" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>콤마(,)를 사용하여 여러개를 연달아 출력이 가능합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.atan(기울기)</span></code> : 기율기의 라디안각을 반환</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.atan2(y성분,</span> <span class="pre">x성분)</span></code> : 벡터의 라디안각을 반환</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 기울기 1의 라디안각</span>
+<span class="n">deg</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span> <span class="c1"># 라디안각을 60분법으로 변환</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 루트 3</span>
+
+<span class="n">rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="c1"># (1, 루트3) 벡터의 라디안각</span>
+<span class="n">deg</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">rad</span><span class="p">)</span> <span class="c1"># 라디안각을 60분법으로 변환</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59.99999999999999
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sin-cos-tan">
+<h2>삼각함수 sin,cos,tan<a class="headerlink" href="#sin-cos-tan" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">math.sin()</span></code> : 사인함수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.cos()</span></code> : 코사인함수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.tan()</span></code> : 탄젠트 함수</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cos 함수</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sin 함수</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2246467991473532e-16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sin 함수</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.2246467991473532e-16
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id2">
-<h2>주석 달기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>로그함수<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">주석내용</span></code></p></li>
-<li><p>주석에 코드 설명을 적어 놓으면 보기 편하다</p></li>
-<li><p>주석처리 된 구문은 코드 실행에 적용되지 않는다.</p></li>
-<li><p>주석처리 단축키 : ctrl + /</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.log()</span></code> : 자연로그</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.log2()</span></code> : 밑이 2인 로그</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.log10()</span></code> : 밑이 10인 로그</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">)</span> <span class="c1"># 인사 문구</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 1과 2의 합을 계산</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World
-3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 인사 문구</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 자연로그</span>
 
-<span class="c1"># 1과 2의 합을 계산</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World
-3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h2>변수 대입<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">변수명</span> <span class="pre">=</span> <span class="pre">값</span></code></p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수 만들기</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 밑이 10인 로그</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수 만들기</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="c1"># 변수에 숫자 더하기</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 문자 이후에 숫자가 나오는 변수명은 가능</span>
-<span class="n">hello1</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 숫자가 앞에 나오는 변수명은 불가</span>
-<span class="mi">1</span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요&quot;</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid decimal literal
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수명에 띄어쓰기 불가</span>
-<span class="n">greet</span> <span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요 여러분&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="n">greet</span> <span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요 여러분&quot;</span>
-          <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수명에 띄어쓰기를 할 때는 주로 언더바 (_) 로 구분합니다</span>
-<span class="n">greet_person</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요 여러분&quot;</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
 </pre></div>
 </div>
 </div>
@@ -719,17 +811,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_python%EA%B3%BC_colab.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="06_%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EB%8B%A4%EB%A3%A8%EA%B8%B0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python과 Colab</p>
+            <p class="prev-next-title">리스트 다루기</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_%EC%9E%90%EB%A3%8C%ED%98%95.html" title="next page">
+    <a class='right-next' id="next-link" href="08_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">자료형</p>
+        <p class="prev-next-title">if 조건문</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python for Deepracer &#8212; AWS Deepracer School</title>
+    <title>if 조건문 &#8212; AWS Deepracer School</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Python과 Colab" href="02_python%EA%B3%BC_colab.html" />
-    <link rel="prev" title="Reinforcement Learning" href="../Reinforcement_Learning/01_%EA%B0%9C%EC%9A%94.html" />
+    <link rel="next" title="for 반복문" href="09_for_%EB%B0%98%EB%B3%B5%EB%AC%B8.html" />
+    <link rel="prev" title="math Library" href="07_%20math_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -190,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="01_%EA%B0%9C%EC%9A%94.html">
    Python for Deepracer
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -198,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02_python%EA%B3%BC_colab.html">
      Python과 Colab
@@ -229,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
      math Library
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="08_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      if 조건문
     </a>
    </li>
@@ -341,7 +341,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Python_for_Deepracer/01_개요.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Python_for_Deepracer/08_if_조건문.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -384,7 +384,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Basic/Python_for_Deepracer/01_개요.ipynb"
+        <a href="../../_sources/Basic/Python_for_Deepracer/08_if_조건문.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -421,23 +421,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   if 조건문 사용 방법
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   예시 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   예시 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   예시 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   예시 4
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python for Deepracer</h1>
+                <h1>if 조건문</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   if 조건문 사용 방법
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   예시 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   예시 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   예시 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   예시 4
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -445,16 +522,130 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="python-for-deepracer">
-<h1>Python for Deepracer<a class="headerlink" href="#python-for-deepracer" title="Permalink to this headline">#</a></h1>
-<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFaVep7-z8&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div><div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="if">
+<h1>if 조건문<a class="headerlink" href="#if" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>if 조건문 사용 방법<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>if 는 최초의 조건문이고, elif 는 위 조건을 만족하지 않을 시 시작되는 조건문이다. else 는 어느 조건도
+만족하지 않을 시 실행되는 코드이다.</p></li>
+<li><p>조건을 만족하면 하위 코드가 실행되고 다른 조건문은 실행되지 않는다. 만약 조건문을 만족하지 않으면
+다음 조건문으로 넘어간다.</p></li>
+<li><p>조건문 끝에 콜론( : ) 을 붙여줘야 하며 하위 코드는 반드시 들여쓰기 (Tab 또는 Space 4번)을 해야 한다.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>예시 1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span>
+</pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20보다 큽니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20보다 큽니다.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>예시 2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건1</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">1</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0과 20사이 입니다.&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0 이하 또는 20 이상입니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0과 20사이 입니다.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>예시 3<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건1</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">1</span>
+<span class="k">elif</span> <span class="n">조건2</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">2</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20보다 큽니다.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20보다 크지 않고 10보다 큽니다.&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10보다 크지 않습니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20보다 크지 않고 10보다 큽니다.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>예시 4<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">조건1</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">1</span>
+<span class="k">elif</span> <span class="n">조건2</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="n">조건3</span><span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">3</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="n">실행</span> <span class="n">코드</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20보다 큽니다.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;20보다 크지 않고 10보다 큽니다.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10보다 크지 않고 0 보다 큽니다.&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0보다 작거나 같습니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0보다 작거나 같습니다.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -484,17 +675,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Reinforcement_Learning/01_%EA%B0%9C%EC%9A%94.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="07_%20math_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Reinforcement Learning</p>
+            <p class="prev-next-title">math Library</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_python%EA%B3%BC_colab.html" title="next page">
+    <a class='right-next' id="next-link" href="09_for_%EB%B0%98%EB%B3%B5%EB%AC%B8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python과 Colab</p>
+        <p class="prev-next-title">for 반복문</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
