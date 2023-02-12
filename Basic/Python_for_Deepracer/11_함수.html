@@ -256,30 +256,74 @@ const thebe_selector_output = ".output, .cell_output"
    Reward Function
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Log_Analysis/01_%EA%B0%9C%EC%9A%94.html">
    Log Analysis
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/02_download_logs.html">
+     download logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/03_logs_csv_file.html">
+     로그 csv 파일
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/04_print_all_params.html">
+     모든 params 출력하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/05_analysis_reference.html">
+     analysis reference
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Physical_Car/01_%EA%B0%9C%EC%9A%94.html">
    Physical Car
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Local_Training/01_%EA%B0%9C%EC%9A%94.html">
-   Local Training
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Multi_User_Mode/01_%EA%B0%9C%EC%9A%94.html">
-   Multi-User Mode
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Tips/01_%EA%B0%9C%EC%9A%94.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Etc/01_%EA%B0%9C%EC%9A%94.html">
    Tips
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/02_multi_user_mode.html">
+     Multi-User Mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/03_Racing_League.html">
+     Racing_League
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/04_Import_and_Export_Model.html">
+     Import and Export Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/05_DRfC.html">
+     DRfC (Deepracer for Cloud)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -416,12 +460,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   사용자 정의 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   전역변수와 지역변수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   딥레이서의 보상함수 구조
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -433,6 +511,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   사용자 정의 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   전역변수와 지역변수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   딥레이서의 보상함수 구조
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -442,6 +543,214 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>함수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>사용자 정의 함수<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>사용자 정의 함수(user-defined function)을 작성하여, 자주 사용되는 코드 블록을 재사용 할 수 있습니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">함수명(입력변수)</span></code> 와 같이 정의한다.</p></li>
+<li><p>첫 줄 끝에 콜론( : ) 을 붙여줘야 하며 하위 코드는 반드시 들여쓰기 (Tab 또는 Space 4번)을 해야 합니다.
+<br></p></li>
+<li><p>기본 구조는 다음과 같습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="c1"># function body</span>
+    <span class="c1"># statements</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">function_name</span></code>은 함수의 이름입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg1,</span> <span class="pre">arg2,</span> <span class="pre">...</span></code>은 함수의 인자(argument)를 나타내며, 함수를 호출할 때 전달되는 값입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">function</span> <span class="pre">body</span></code> 부분은 함수의 본체이며, 함수가 수행할 코드를 포함하고 있습니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">[expression]</span></code> 부분은 함수의 결과를 반환합니다. <code class="docutils literal notranslate"><span class="pre">return</span></code> 뒤에 위치한 <code class="docutils literal notranslate"><span class="pre">expression</span></code>은 함수의 반환 값입니다.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>예시 1</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_plus_one</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">square_plus_one</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">square_plus_one</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>예시 2</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_error</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">se</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">se</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span> <span class="o">=</span> <span class="n">square_error</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span> <span class="o">=</span> <span class="n">square_error</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>전역변수와 지역변수<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>지역 (local) 변수 : 함수 내부에서만 일시적으로 정의되는 변수</p></li>
+<li><p>전역 (global) 변수 : 함수 내부 외부에서 모두 호출되어 사용 가능한 변수</p></li>
+<li><p>사용자 정의 함수에서 정의 된 변수는 지역 변수로 생성되며 외부에서 호출이 불가하다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">변수</span></code> : 해당 변수를 전역변수로 지정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">변수</span></code> : 해당 변수를 지역변수로 지정</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 지역 변수를 함수 외부에서 호출하면 에러가 납니다.</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">local_variable</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">local_variable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">local_variable</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;local_variable&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">global</span> <span class="n">global_variable</span>
+    <span class="n">global_variable</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">global_variable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">global_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>딥레이서의 보상함수 구조<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>시뮬레이션 환경으로부터 받아온 정보가 <code class="docutils literal notranslate"><span class="pre">params</span></code>에 딕셔너리로 저장되어 있습니다.</p></li>
+<li><p>보상함수는 <code class="docutils literal notranslate"><span class="pre">params</span></code> 변수를 입력받아 보상을 출력하는 구조입니다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># 차량의 x 좌표</span>
+    <span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span>  <span class="c1"># 차량의 y 좌표</span>
+    <span class="s1">&#39;speed&#39;</span> <span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>  <span class="c1"># 차량의 속도</span>
+    <span class="s1">&#39;steering_angle&#39;</span> <span class="p">:</span> <span class="mf">12.7</span><span class="p">,</span>  <span class="c1"># 모든 바퀴가 트랙 내부에 위치하는지 여부</span>
+    <span class="s1">&#39;all_wheels_on_track&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="c1"># 기타 등등</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>속도에 따른 보상함수 예시</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># 속도가 2보다 크면 보상 2</span>
+    <span class="k">elif</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># 속도가 1보다 크고 2 이하면 보상 1</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># 속도가 1 이하면 보상 0</span>
+
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>   <span class="c1"># 보상을 실수형으로 변환하여 리턴  </span>
+
+<span class="n">reward</span> <span class="o">=</span> <span class="n">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
