@@ -249,11 +249,6 @@ const thebe_selector_output = ".output, .cell_output"
      함수
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12_%ED%81%B4%EB%9E%98%EC%8A%A4.html">
-     클래스
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -628,7 +623,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수 만들기</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># 변수에 숫자 더하기</span>
+<span class="c1"># 변수에 숫자 더하여 새 변수 생성</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -637,6 +632,24 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 변수 만들기</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># 자기 자신에 수 더하기</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -657,7 +670,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">hello</span> <span class="o">=</span> <span class="s2">&quot;안녕하세요&quot;</span>
     <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid decimal literal
