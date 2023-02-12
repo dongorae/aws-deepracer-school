@@ -25,13 +25,13 @@ parts:
 
     # Model_Training
     - file: Basic/Model_Training/01_개요
-      # sections:
+      sections:
       # - file: Basic/Model_Training/01_DNN모델과_딥러닝
       # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
 
     # Reinforcement_Learning
     - file: Basic/Reinforcement_Learning/01_개요
-      # sections:
+      sections:
       # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
       # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
 
@@ -53,39 +53,32 @@ parts:
   
     # Reward_Function
     - file: Basic/Reward_Function/01_개요
-      # sections:
+      sections:
       # - file: Basic/Reward_Function/01_DNN모델과_딥러닝
       # - file: Basic/Reward_Function/02_CNN모델과_컴퓨터비전
   
     # Log_Analysis
     - file: Basic/Log_Analysis/01_개요
-      # sections:
-      # - file: Basic/Log_Analysis/01_DNN모델과_딥러닝
-      # - file: Basic/Log_Analysis/02_CNN모델과_컴퓨터비전
+      sections:
+      - file: Basic/Log_Analysis/02_download_logs
+      - file: Basic/Log_Analysis/03_logs_csv_file
+      - file: Basic/Log_Analysis/04_print_all_params
+      - file: Basic/Log_Analysis/05_analysis_reference
 
     # Physical_Car
     - file: Basic/Physical_Car/01_개요
-      # sections:
+      sections:
       # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
       # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
 
-    # Local_Training
-    - file: Basic/Local_Training/01_개요
-      # sections:
-      # - file: Basic/Local_Training/01_DNN모델과_딥러닝
-      # - file: Basic/Local_Training/02_CNN모델과_컴퓨터비전
+    # Etc
+    - file: Basic/Etc/01_개요
+      sections:
+      - file: Basic/Etc/02_multi_user_mode
+      - file: Basic/Etc/03_Racing_League  
+      - file: Basic/Etc/04_Import_and_Export_Model  
+      - file: Basic/Etc/05_DRfC  
 
-    # Multi_User_Mode
-    - file: Basic/Multi_User_Mode/01_개요
-      # sections:
-      # - file: Basic/Multi_User_Mode/01_DNN모델과_딥러닝
-      # - file: Basic/Multi_User_Mode/02_CNN모델과_컴퓨터비전
-
-    # Tips
-    - file: Basic/Tips/01_개요
-      # sections:
-      # - file: Basic/Tips/01_DNN모델과_딥러닝
-      # - file: Basic/Tips/02_CNN모델과_컴퓨터비전  
 
   # ###################
   # - caption: DEVELOPER
