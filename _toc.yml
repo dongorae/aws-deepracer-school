@@ -49,7 +49,7 @@ parts:
       - file: Basic/Python_for_Deepracer/09_for_반복문
       - file: Basic/Python_for_Deepracer/10_while_조건반복문
       - file: Basic/Python_for_Deepracer/11_함수
-      - file: Basic/Python_for_Deepracer/12_클래스
+      # - file: Basic/Python_for_Deepracer/12_클래스
   
     # Reward_Function
     - file: Basic/Reward_Function/01_개요
