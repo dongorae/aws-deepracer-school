@@ -61,7 +61,7 @@ parts:
     - file: Basic/Log_Analysis/01_개요
       sections:
       - file: Basic/Log_Analysis/02_download_logs
-      - file: Basic/Log_Analysis/03_logs_csv_file
+      - file: Basic/Log_Analysis/03_iteration_csv_file
       - file: Basic/Log_Analysis/04_print_all_params
       - file: Basic/Log_Analysis/05_analysis_reference
 
