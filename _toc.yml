@@ -25,13 +25,13 @@ parts:
 
     # Model_Training
     - file: Basic/Model_Training/01_개요
-      sections:
+      # sections:
       # - file: Basic/Model_Training/01_DNN모델과_딥러닝
       # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
 
     # Reinforcement_Learning
     - file: Basic/Reinforcement_Learning/01_개요
-      sections:
+      # sections:
       # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
       # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
 
@@ -53,7 +53,7 @@ parts:
   
     # Reward_Function
     - file: Basic/Reward_Function/01_개요
-      sections:
+      # sections:
       # - file: Basic/Reward_Function/01_DNN모델과_딥러닝
       # - file: Basic/Reward_Function/02_CNN모델과_컴퓨터비전
   
@@ -67,7 +67,7 @@ parts:
 
     # Physical_Car
     - file: Basic/Physical_Car/01_개요
-      sections:
+      # sections:
       # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
       # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
 
