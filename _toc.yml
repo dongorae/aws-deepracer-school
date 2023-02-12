@@ -38,7 +38,7 @@ parts:
 
     # Python_for_Deepracer
     - file: Basic/Python_for_Deepracer/01_개요
-      # sections:
+      sections:
       - file: Basic/Python_for_Deepracer/02_python과_colab
       - file: Basic/Python_for_Deepracer/03_출력과_변수
       - file: Basic/Python_for_Deepracer/04_자료형
