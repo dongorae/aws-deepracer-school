@@ -589,7 +589,7 @@ title="Print to PDF"
 <li><p>algorithm : <code class="docutils literal notranslate"><span class="pre">PPO</span></code></p>
 <ul class="simple">
 <li><p>discount_factor = <code class="docutils literal notranslate"><span class="pre">0.999</span></code></p></li>
-<li><p>나머지 : default</p></li>
+<li><p>etc : default</p></li>
 </ul>
 </li>
 <li><p>action space : <code class="docutils literal notranslate"><span class="pre">Continuous</span></code></p>
@@ -616,13 +616,13 @@ title="Print to PDF"
 <li><p>algorithm : <code class="docutils literal notranslate"><span class="pre">PPO</span></code></p>
 <ul class="simple">
 <li><p>discount_factor = <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>나머지 : default</p></li>
+<li><p>etc : default</p></li>
 </ul>
 </li>
 <li><p>action space : <code class="docutils literal notranslate"><span class="pre">Continuous</span></code></p>
 <ul class="simple">
 <li><p>speed : default</p></li>
-<li><p>teering angle : default</p></li>
+<li><p>steering angle : default</p></li>
 </ul>
 </li>
 <li><p>reward_function</p>
@@ -643,13 +643,13 @@ title="Print to PDF"
 <li><p>algorithm : <code class="docutils literal notranslate"><span class="pre">PPO</span></code></p>
 <ul class="simple">
 <li><p>discount_factor = <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>나머지 : default</p></li>
+<li><p>etc : default</p></li>
 </ul>
 </li>
 <li><p>action space : <code class="docutils literal notranslate"><span class="pre">Continuous</span></code></p>
 <ul class="simple">
 <li><p>speed : default</p></li>
-<li><p>teering angle : default</p></li>
+<li><p>steering angle : default</p></li>
 </ul>
 </li>
 <li><p>reward_function</p>
@@ -670,13 +670,13 @@ title="Print to PDF"
 <li><p>algorithm : <code class="docutils literal notranslate"><span class="pre">PPO</span></code></p>
 <ul class="simple">
 <li><p>discount_factor = <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-<li><p>나머지 : default</p></li>
+<li><p>etc : default</p></li>
 </ul>
 </li>
 <li><p>action space : <code class="docutils literal notranslate"><span class="pre">Continuous</span></code></p>
 <ul class="simple">
 <li><p>speed : <code class="docutils literal notranslate"><span class="pre">0.699</span> <span class="pre">~</span> <span class="pre">0.7</span></code></p></li>
-<li><p>teering angle : default</p></li>
+<li><p>steering angle : default</p></li>
 </ul>
 </li>
 <li><p>reward_function</p>
@@ -693,23 +693,29 @@ title="Print to PDF"
     <span class="n">waypoints</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;waypoints&#39;</span><span class="p">]</span>
     <span class="n">waypoints_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">waypoints</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
+    <span class="c1"># 타켓 웨이포인트 좌표 구하기</span>
     <span class="n">closest_previous</span><span class="p">,</span> <span class="n">closest_next</span> <span class="o">=</span> <span class="n">closest_waypoints</span>
     <span class="n">target_waypoint_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">closest_next</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">%</span> <span class="n">waypoints_len</span>
     <span class="n">target_waypoint</span> <span class="o">=</span> <span class="n">waypoints</span><span class="p">[</span><span class="n">target_waypoint_idx</span><span class="p">]</span>
     <span class="n">x_target</span><span class="p">,</span> <span class="n">y_target</span> <span class="o">=</span> <span class="n">target_waypoint</span>
+
+    <span class="c1"># 현재 위치에서 타켓 웨이포인트로의 벡터의 라디안 각 구하기</span>
     <span class="n">x_target_vector</span> <span class="o">=</span> <span class="n">x_target</span> <span class="o">-</span> <span class="n">x</span>
     <span class="n">y_target_vector</span> <span class="o">=</span> <span class="n">y_target</span> <span class="o">-</span> <span class="n">y</span>
     <span class="n">target_rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">y_target_vector</span><span class="p">,</span> <span class="n">x_target_vector</span><span class="p">)</span>
 
-    <span class="n">pred_steering_angle</span> <span class="o">=</span> <span class="n">target_rad</span> <span class="o">-</span> <span class="n">heading_rad</span>
+    <span class="c1"># 정답 값</span>
+    <span class="n">target_steering_angle_rad</span> <span class="o">=</span> <span class="n">target_rad</span> <span class="o">-</span> <span class="n">heading_rad</span>
 
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pred_steering_angle</span> <span class="o">-</span> <span class="n">steering_angle_rad</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="c1"># 손실과 보상</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">target_steering_angle_rad</span> <span class="o">-</span> <span class="n">steering_angle_rad</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">loss</span>
+    
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p>훈련 시간 : <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">분</span></code></p></li>
+<li><p>훈련 시간 : <code class="docutils literal notranslate"><span class="pre">60</span> <span class="pre">분</span></code></p></li>
 </ul>
 </section>
 </section>
