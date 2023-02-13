@@ -308,11 +308,6 @@ const thebe_selector_output = ".output, .cell_output"
      모든 params 출력하기
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Log_Analysis/06_analysis_reference.html">
-     analysis reference
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -519,7 +514,59 @@ title="Print to PDF"
   <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
     src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFaayDPINM&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
-</div><div class="toctree-wrapper compound">
+</div><ul class="simple">
+<li><p>기타 보상함수 셈플</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="c1">########## [reward_survived] survived ########## </span>
+    <span class="n">reward_survived</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    
+     <span class="c1">########## [reward_wheels] all_wheels_on_track ########## </span>
+    <span class="n">all_wheels_on_track</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;all_wheels_on_track&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">all_wheels_on_track</span> <span class="p">:</span>
+        <span class="n">reward_wheels</span> <span class="o">=</span> <span class="mi">1</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">reward_wheels</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    
+    <span class="c1">############## [reward_speed] speed #############</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span>
+    <span class="n">reward_speed</span> <span class="o">=</span> <span class="n">speed</span> <span class="o">/</span> <span class="mi">4</span> 
+    
+    
+    <span class="c1">############## [reward_direction] direction_diff #############</span>
+    <span class="n">waypoints</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;waypoints&#39;</span><span class="p">]</span>
+    <span class="n">closest_waypoints</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;closest_waypoints&#39;</span><span class="p">]</span>
+    <span class="n">heading</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># 현재 에이전트와 가장 가까운 waypoint의 위치를 가져옵니다.</span>
+    <span class="n">next_point</span> <span class="o">=</span> <span class="n">waypoints</span><span class="p">[</span><span class="n">closest_waypoints</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">prev_point</span> <span class="o">=</span> <span class="n">waypoints</span><span class="p">[</span><span class="n">closest_waypoints</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+    <span class="c1"># track_direction 을 계산 </span>
+    <span class="n">track_direction</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">next_point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">prev_point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">next_point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">prev_point</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">track_direction</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">track_direction</span><span class="p">)</span>  
+
+	<span class="c1"># 각의 차이 (direction_diff) 계산</span>
+    <span class="n">direction_diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">track_direction</span> <span class="o">-</span> <span class="n">heading</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">direction_diff</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
+        <span class="n">direction_diff</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">-</span> <span class="n">direction_diff</span>
+    
+    <span class="c1"># 보상 결정</span>
+    <span class="n">direction_diff_rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">direction_diff</span><span class="p">)</span>
+    <span class="n">reward_direction</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">direction_diff_rad</span><span class="p">)</span>
+        
+        
+    <span class="c1">########### [reward weight sum] ############ </span>
+    <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">reward_survived</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">reward_wheels</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">reward_speed</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="n">reward_direction</span>
+    
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
