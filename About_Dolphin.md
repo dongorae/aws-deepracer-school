@@ -1,5 +1,11 @@
 # About Dolphin
 
+## Contact
+
+- email : fanfrebird@naver.com
+- github : <https://github.com/dongorae/>
+<!-- - youtube : <https://www.youtube.com/channel/UCNNv6Pz8HFbsG5Epi5YDvpg> -->
+
 ## 이력
 - '인공지능과 자율주행' 강의
     - 빅데이터 혁신공유대학(서울대학교, 시립대학교, 전북대학교)
