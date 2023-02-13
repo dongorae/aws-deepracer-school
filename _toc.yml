@@ -53,9 +53,9 @@ parts:
   
     # Reward_Function
     - file: Basic/Reward_Function/01_개요
-      # sections:
-      # - file: Basic/Reward_Function/01_DNN모델과_딥러닝
-      # - file: Basic/Reward_Function/02_CNN모델과_컴퓨터비전
+      sections:
+      - file: Basic/Reward_Function/02_params
+      - file: Basic/Reward_Function/03_Reward_function_examples
   
     # Log_Analysis
     - file: Basic/Log_Analysis/01_개요
