@@ -44,7 +44,7 @@ parts:
       - file: Basic/Python_for_Deepracer/04_자료형
       - file: Basic/Python_for_Deepracer/05_연산
       - file: Basic/Python_for_Deepracer/06_리스트_다루기
-      - file: Basic/Python_for_Deepracer/07_ math_라이브러리
+      - file: Basic/Python_for_Deepracer/07_math_라이브러리
       - file: Basic/Python_for_Deepracer/08_if_조건문
       - file: Basic/Python_for_Deepracer/09_for_반복문
       - file: Basic/Python_for_Deepracer/10_while_조건반복문
@@ -55,15 +55,17 @@ parts:
     - file: Basic/Reward_Function/01_개요
       sections:
       - file: Basic/Reward_Function/02_params
-      - file: Basic/Reward_Function/03_Reward_function_examples
+      - file: Basic/Reward_Function/03_Default_examples
+      - file: Basic/Reward_Function/04_Reward_function_Lab
   
     # Log_Analysis
     - file: Basic/Log_Analysis/01_개요
       sections:
-      - file: Basic/Log_Analysis/02_download_logs
-      - file: Basic/Log_Analysis/03_iteration_csv_file
-      - file: Basic/Log_Analysis/04_print_all_params
-      - file: Basic/Log_Analysis/05_analysis_reference
+      - file: Basic/Log_Analysis/02_Reward_graph
+      - file: Basic/Log_Analysis/03_download_logs
+      - file: Basic/Log_Analysis/04_iteration_csv_file
+      - file: Basic/Log_Analysis/05_print_all_params
+      - file: Basic/Log_Analysis/06_analysis_reference
 
     # Physical_Car
     - file: Basic/Physical_Car/01_개요
