@@ -1,0 +1,2058 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>iteration csv 파일 다루기 &#8212; AWS Deepracer School</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="모든 params 출력하기" href="05_print_all_params.html" />
+    <link rel="prev" title="download logs" href="03_download_logs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AWS Deepracer School</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    AWS Deepracer School
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../About_Dolphin.html">
+   About Dolphin
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basic Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../AWS_Deepracer_Overview/01_%EA%B0%9C%EC%9A%94.html">
+   AWS Deepracer Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/02_Deepracer%EB%9E%80.html">
+     Deepracer 란?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/03_%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C_%EC%BB%B4%ED%93%A8%ED%8C%85%EA%B3%BC_AWS.html">
+     클라우드 컴퓨팅과 AWS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/04_Deepracer_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0.html">
+     Deepracer 워크플로우
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/05_Deepracer_%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC.html">
+     Deepracer 작동원리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/06_Deepracer_%EC%9A%94%EA%B8%88_%EC%A0%95%EC%B1%85.html">
+     Deepracer 요금 정책
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/07_AWS_%EA%B0%80%EC%9E%85.html">
+     AWS 가입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/08_AWS_%EA%B3%84%EC%A0%95_%EC%84%A4%EC%A0%95.html">
+     AWS 계정 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Deepracer_Overview/09_Deepracer_%EC%BD%98%EC%86%94_%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0.html">
+     Deepracer 콘솔 둘러보기
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Model_Training/01_%EA%B0%9C%EC%9A%94.html">
+   Model Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reinforcement_Learning/01_%EA%B0%9C%EC%9A%94.html">
+   Reinforcement Learning
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Python_for_Deepracer/01_%EA%B0%9C%EC%9A%94.html">
+   Python for Deepracer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/02_python%EA%B3%BC_colab.html">
+     Python과 Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/03_%EC%B6%9C%EB%A0%A5%EA%B3%BC_%EB%B3%80%EC%88%98.html">
+     출력과 변수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/04_%EC%9E%90%EB%A3%8C%ED%98%95.html">
+     자료형
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/05_%EC%97%B0%EC%82%B0.html">
+     연산
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/06_%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EB%8B%A4%EB%A3%A8%EA%B8%B0.html">
+     리스트 다루기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/07_math_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC.html">
+     math Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/08_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8.html">
+     if 조건문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/09_for_%EB%B0%98%EB%B3%B5%EB%AC%B8.html">
+     for 반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/10_while_%EC%A1%B0%EA%B1%B4%EB%B0%98%EB%B3%B5%EB%AC%B8.html">
+     while 조건반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Python_for_Deepracer/11_%ED%95%A8%EC%88%98.html">
+     함수
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Reward_Function/01_%EA%B0%9C%EC%9A%94.html">
+   Reward Function
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/02_params.html">
+     params
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/03_Default_examples.html">
+     기본 보상함수 예제
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/04_Reward_function_Lab.html">
+     보상함수 실험
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_%EA%B0%9C%EC%9A%94.html">
+   Log Analysis
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Reward_graph.html">
+     Reward graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_download_logs.html">
+     download logs
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     iteration csv 파일 다루기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_print_all_params.html">
+     모든 params 출력하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_analysis_reference.html">
+     analysis reference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Physical_Car/01_%EA%B0%9C%EC%9A%94.html">
+   Physical Car
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Etc/01_%EA%B0%9C%EC%9A%94.html">
+   Etc
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/02_multi_user_mode.html">
+     Multi-User Mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/03_Racing_League.html">
+     Racing_League
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/04_Import_and_Export_Model.html">
+     Import and Export Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Etc/05_DRfC.html">
+     DRfC (Deepracer for Cloud)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Log_Analysis/04_iteration_csv_file.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Basic/Log_Analysis/04_iteration_csv_file.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   iteration.csv 파일 불러오기 및 전처리 코드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   주요 변수 설명
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   실습
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     로그 데이터 셈플
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#colab">
+     colab 마운트
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-tt-continuous">
+     (실습 1) logs-TT-continuous
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-tt-discrete">
+     (실습 2) logs-TT-discrete
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-oa-continuous">
+     (실습 3) logs-OA-continuous
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   한계점
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>iteration csv 파일 다루기</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   iteration.csv 파일 불러오기 및 전처리 코드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   주요 변수 설명
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   실습
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     로그 데이터 셈플
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#colab">
+     colab 마운트
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-tt-continuous">
+     (실습 1) logs-TT-continuous
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-tt-discrete">
+     (실습 2) logs-TT-discrete
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logs-oa-continuous">
+     (실습 3) logs-OA-continuous
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   한계점
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="iteration-csv">
+<h1>iteration csv 파일 다루기<a class="headerlink" href="#iteration-csv" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>iteration.csv 파일 불러오기 및 전처리 코드<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>csv 특성상 콤마(,)를 기준으로 열을 구분하기 때문에 그냥 불러오면 아래와 같이 데이터가 밀릴 수 있습니다. 따라서 전처리 과정이 필요합니다.
+<img alt="" src="../../_images/01.png" /></p></li>
+</ul>
+<ul class="simple">
+<li><p>우선, 아래와 같이 <code class="docutils literal notranslate"><span class="pre">n-iteration.csv</span></code> 파일 들이 담겨있는 폴더 경로를 찾아서 복사합니다.
+<img alt="" src="../../_images/02.png" /></p></li>
+</ul>
+<ul class="simple">
+<li><p>전처리 예시</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># iteration.csv 파일이 존재하는 폴더 경로 지정</span>
+<span class="n">simtrace_path</span> <span class="o">=</span> <span class="s2">&quot;iteration.csv 파일이 존재하는 폴더 경로&quot;</span> 
+
+<span class="c1"># 라이브러리 import</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 파일 목록 가져오기</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">)</span>
+
+<span class="c1"># 전처리한 데이터 프레임을 담을 리스트</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 전처리</span>
+<span class="k">for</span> <span class="n">target_file</span> <span class="ow">in</span> <span class="n">file_list</span> <span class="p">:</span> 
+  <span class="n">target_iteration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">target_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">,</span> <span class="n">target_file</span><span class="p">)</span>
+
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+      <span class="n">csv_readlines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iteration&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">line_text</span> <span class="ow">in</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">line_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;prepare&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;prepare&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;in_progress&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;off_track&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;crashed&#39;</span><span class="p">,</span><span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">target_iteration</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">)</span>
+
+  <span class="n">df_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+  <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_target</span><span class="p">)</span>
+
+<span class="c1"># 전처리 된 데이터프레임 병합</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_final</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>주요 변수 설명<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>iteration : episode의 집합.</p></li>
+<li><p>episode : step 의 집합</p></li>
+<li><p>step : episode 의 순서</p></li>
+<li><p>X : 차량의 x좌표</p></li>
+<li><p>Y : 차량의 y좌표</p></li>
+<li><p>yaw : 차량의 정면 각도 ( = heading)</p></li>
+<li><p>steer : 차량 핸들 각도</p></li>
+<li><p>throttle : 차량 속도 ( = speed)</p></li>
+<li><p>action : 행동</p>
+<ul>
+<li><p>이산공간의 경우 행동의 index 가 표시되고 연속공간의 경우 차량의 핸들 각도와 속도가 각각 action_1, action_2 로 나누어 표시됨</p></li>
+</ul>
+</li>
+<li><p>reward : 현재 step 에서 받은 보상</p></li>
+<li><p>all_wheels_on_track : 차량의 네 바퀴가 트랙 안에 위치하는지 여부</p></li>
+<li><p>progress : 현재 Epiosde 에서 완주율</p></li>
+<li><p>closest_waypoint : 가장 가까운 waypoint</p></li>
+<li><p>tstamp : 훈련이 진행된 총 시간</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>실습<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id4">
+<h3>로그 데이터 셈플<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Race_Type</p></th>
+<th class="head"><p>Action_Space</p></th>
+<th class="head"><p>Track</p></th>
+<th class="head"><p>file_link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Time Trial</p></td>
+<td><p>continuous</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-TT-continuous-training_job_JKSgvEVATgC9vLp71zgqGA_logs.tar.gz">logs-TT-continuous</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Time Trial</p></td>
+<td><p>discrete</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-TT-discrete-training_job_Ovg-TyIxTH-wbiyxzYd63Q_logs.tar.gz">logs-TT-discrete</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Object Avoidance</p></td>
+<td><p>continuous</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-OA-continuous-training_job_sqear_VOS6azJ8DPUVeqtg_logs.tar.gz">logs-OA-continuous</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Object Avoidance</p></td>
+<td><p>discrete</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-OA-discrete-training_job_VucatISES96NHBUWDNmBdA_logs.tar.gz">logs-OA-discrete</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Head to Head</p></td>
+<td><p>continuous</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-HH-continuous-training_job_TQQkiq0qT3KrfnGmw7gQgA_logs.tar.gz">logs-HH-continuous</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Head to Head</p></td>
+<td><p>discrete</p></td>
+<td><p>reinvent2019</p></td>
+<td><p><a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-HH-discrete-training_job_MU5FJwvVQ_aBSQFNhSvF1A_logs.tar.gz">logs-HH-discrete</a></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>전체 다운받기 : <a class="reference external" href="https://deepracer-lecture-open-data.s3.amazonaws.com/download_logs_samples/logs-all.zip">logs-all.zip</a></p></li>
+</ul>
+</section>
+<section id="colab">
+<h3>colab 마운트<a class="headerlink" href="#colab" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;./gdrive&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;./gdrive&quot;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google.colab&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="logs-tt-continuous">
+<h3>(실습 1) logs-TT-continuous<a class="headerlink" href="#logs-tt-continuous" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iteration.csv 파일이 존재하는 폴더 경로 지정</span>
+<span class="n">simtrace_path</span> <span class="o">=</span> <span class="s2">&quot;/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/logs-TT-continuous/sim-trace/training/training-simtrace&quot;</span> 
+
+<span class="c1"># 라이브러리 import</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 파일 목록 가져오기</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">)</span>
+
+<span class="c1"># 전처리한 데이터 프레임을 담을 리스트</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 전처리</span>
+<span class="k">for</span> <span class="n">target_file</span> <span class="ow">in</span> <span class="n">file_list</span> <span class="p">:</span> 
+  <span class="n">target_iteration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">target_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">,</span> <span class="n">target_file</span><span class="p">)</span>
+
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+      <span class="n">csv_readlines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iteration&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">line_text</span> <span class="ow">in</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">line_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;prepare&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;prepare&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;in_progress&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;off_track&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;crashed&#39;</span><span class="p">,</span><span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">target_iteration</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">)</span>
+
+  <span class="n">df_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+  <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_target</span><span class="p">)</span>
+
+<span class="c1"># 전처리 된 데이터프레임 병합</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_final</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c7a3f186-d08a-458f-8fee-25a74981f869">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iteration</th>
+      <th>episode</th>
+      <th>steps</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>yaw</th>
+      <th>steer</th>
+      <th>throttle</th>
+      <th>action</th>
+      <th>reward</th>
+      <th>done</th>
+      <th>all_wheels_on_track</th>
+      <th>progress</th>
+      <th>closest_waypoint</th>
+      <th>track_len</th>
+      <th>tstamp</th>
+      <th>episode_status</th>
+      <th>pause_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.322517</td>
+      <td>2.691220</td>
+      <td>-84.005984</td>
+      <td>-30.000000</td>
+      <td>1.000000</td>
+      <td>[-30.0, 1.0]</td>
+      <td>0.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.606251</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>23.374</td>
+      <td>prepare</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>0.322497</td>
+      <td>2.691373</td>
+      <td>-84.006075</td>
+      <td>-30.000000</td>
+      <td>0.784473</td>
+      <td>[-30.0, 0.7844727679611428]</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.605583</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>23.440</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>0.319572</td>
+      <td>2.678847</td>
+      <td>-85.027137</td>
+      <td>-10.536257</td>
+      <td>0.588895</td>
+      <td>[-10.536256828073078, 0.5888954477708513]</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.657471</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>23.499</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4.0</td>
+      <td>0.312488</td>
+      <td>2.659821</td>
+      <td>-87.260787</td>
+      <td>24.231568</td>
+      <td>0.500000</td>
+      <td>[24.231567735164617, 0.5]</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.734625</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>23.574</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>5.0</td>
+      <td>0.316719</td>
+      <td>2.633208</td>
+      <td>-86.645489</td>
+      <td>-22.579592</td>
+      <td>0.663647</td>
+      <td>[-22.579592254845238, 0.6636468022947859]</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.851172</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>23.638</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3250</th>
+      <td>2</td>
+      <td>59</td>
+      <td>168.0</td>
+      <td>7.237886</td>
+      <td>1.131095</td>
+      <td>20.460835</td>
+      <td>-5.609134</td>
+      <td>0.901326</td>
+      <td>[-5.609133698222017, 0.9013260732040003]</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>41.477307</td>
+      <td>57</td>
+      <td>23.118222</td>
+      <td>275.702</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3251</th>
+      <td>2</td>
+      <td>59</td>
+      <td>169.0</td>
+      <td>7.290502</td>
+      <td>1.152754</td>
+      <td>20.850336</td>
+      <td>-7.973791</td>
+      <td>1.000000</td>
+      <td>[-7.973791102262979, 1.0]</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>41.635570</td>
+      <td>57</td>
+      <td>23.118222</td>
+      <td>275.768</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3252</th>
+      <td>2</td>
+      <td>59</td>
+      <td>170.0</td>
+      <td>7.350248</td>
+      <td>1.173194</td>
+      <td>20.355409</td>
+      <td>-8.208197</td>
+      <td>0.624271</td>
+      <td>[-8.208196500022996, 0.6242709462324019]</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>41.865668</td>
+      <td>57</td>
+      <td>23.118222</td>
+      <td>275.839</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3253</th>
+      <td>2</td>
+      <td>59</td>
+      <td>171.0</td>
+      <td>7.407519</td>
+      <td>1.190892</td>
+      <td>19.630001</td>
+      <td>-12.337266</td>
+      <td>0.659029</td>
+      <td>[-12.33726560992902, 0.659029347465123]</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>42.079821</td>
+      <td>58</td>
+      <td>23.118222</td>
+      <td>275.900</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3254</th>
+      <td>2</td>
+      <td>59</td>
+      <td>172.0</td>
+      <td>7.465689</td>
+      <td>1.207724</td>
+      <td>18.787307</td>
+      <td>-20.420495</td>
+      <td>0.723259</td>
+      <td>[-20.42049466339495, 0.7232594594107887]</td>
+      <td>0.001</td>
+      <td>True</td>
+      <td>False</td>
+      <td>42.244357</td>
+      <td>58</td>
+      <td>23.118222</td>
+      <td>275.967</td>
+      <td>off_track</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3255 rows × 18 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c7a3f186-d08a-458f-8fee-25a74981f869')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c7a3f186-d08a-458f-8fee-25a74981f869 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c7a3f186-d08a-458f-8fee-25a74981f869');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="logs-tt-discrete">
+<h3>(실습 2) logs-TT-discrete<a class="headerlink" href="#logs-tt-discrete" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iteration.csv 파일이 존재하는 폴더 경로 지정</span>
+<span class="n">simtrace_path</span> <span class="o">=</span> <span class="s2">&quot;/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/logs-TT-discrete/sim-trace/training/training-simtrace&quot;</span> 
+
+<span class="c1"># 라이브러리 import</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 파일 목록 가져오기</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">)</span>
+
+<span class="c1"># 전처리한 데이터 프레임을 담을 리스트</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 전처리</span>
+<span class="k">for</span> <span class="n">target_file</span> <span class="ow">in</span> <span class="n">file_list</span> <span class="p">:</span> 
+  <span class="n">target_iteration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">target_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">,</span> <span class="n">target_file</span><span class="p">)</span>
+
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+      <span class="n">csv_readlines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iteration&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">line_text</span> <span class="ow">in</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">line_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;prepare&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;prepare&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;in_progress&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;off_track&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;crashed&#39;</span><span class="p">,</span><span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">target_iteration</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">)</span>
+
+  <span class="n">df_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+  <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_target</span><span class="p">)</span>
+
+<span class="c1"># 전처리 된 데이터프레임 병합</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_final</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-42f97c75-4f18-44c1-9196-05f909b3d4b2">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iteration</th>
+      <th>episode</th>
+      <th>steps</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>yaw</th>
+      <th>steer</th>
+      <th>throttle</th>
+      <th>action</th>
+      <th>reward</th>
+      <th>done</th>
+      <th>all_wheels_on_track</th>
+      <th>progress</th>
+      <th>closest_waypoint</th>
+      <th>track_len</th>
+      <th>tstamp</th>
+      <th>episode_status</th>
+      <th>pause_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>40</td>
+      <td>1.0</td>
+      <td>0.322507</td>
+      <td>2.691125</td>
+      <td>-84.000174</td>
+      <td>15.0</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>0.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.606656</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>263.260</td>
+      <td>prepare</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>40</td>
+      <td>2.0</td>
+      <td>0.322497</td>
+      <td>2.691373</td>
+      <td>-84.006075</td>
+      <td>30.0</td>
+      <td>0.5</td>
+      <td>8</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.605583</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>263.291</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>40</td>
+      <td>3.0</td>
+      <td>0.324574</td>
+      <td>2.685322</td>
+      <td>-83.697732</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>5</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.632553</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>263.382</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>40</td>
+      <td>4.0</td>
+      <td>0.328456</td>
+      <td>2.664824</td>
+      <td>-83.382752</td>
+      <td>15.0</td>
+      <td>1.0</td>
+      <td>7</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.722943</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>263.456</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>40</td>
+      <td>5.0</td>
+      <td>0.330915</td>
+      <td>2.641789</td>
+      <td>-83.440031</td>
+      <td>30.0</td>
+      <td>1.0</td>
+      <td>9</td>
+      <td>1.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.823087</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>263.524</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3082</th>
+      <td>0</td>
+      <td>19</td>
+      <td>29.0</td>
+      <td>-0.347158</td>
+      <td>3.102314</td>
+      <td>-140.954107</td>
+      <td>-15.0</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>3.901550</td>
+      <td>152</td>
+      <td>23.118222</td>
+      <td>80.496</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3083</th>
+      <td>0</td>
+      <td>19</td>
+      <td>30.0</td>
+      <td>-0.380709</td>
+      <td>3.072923</td>
+      <td>-140.669880</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>4</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.032639</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>80.596</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3084</th>
+      <td>0</td>
+      <td>19</td>
+      <td>31.0</td>
+      <td>-0.413444</td>
+      <td>3.049650</td>
+      <td>-141.351053</td>
+      <td>30.0</td>
+      <td>0.5</td>
+      <td>8</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.137175</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>80.650</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3085</th>
+      <td>0</td>
+      <td>19</td>
+      <td>32.0</td>
+      <td>-0.438021</td>
+      <td>3.024665</td>
+      <td>-140.643719</td>
+      <td>-15.0</td>
+      <td>0.5</td>
+      <td>2</td>
+      <td>0.001</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.248139</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>80.720</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3086</th>
+      <td>0</td>
+      <td>19</td>
+      <td>33.0</td>
+      <td>-0.463285</td>
+      <td>2.993263</td>
+      <td>-138.687614</td>
+      <td>15.0</td>
+      <td>0.5</td>
+      <td>6</td>
+      <td>0.001</td>
+      <td>True</td>
+      <td>False</td>
+      <td>4.346403</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>80.793</td>
+      <td>off_track</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3087 rows × 18 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-42f97c75-4f18-44c1-9196-05f909b3d4b2')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-42f97c75-4f18-44c1-9196-05f909b3d4b2 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-42f97c75-4f18-44c1-9196-05f909b3d4b2');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="logs-oa-continuous">
+<h3>(실습 3) logs-OA-continuous<a class="headerlink" href="#logs-oa-continuous" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iteration.csv 파일이 존재하는 폴더 경로 지정</span>
+<span class="n">simtrace_path</span> <span class="o">=</span> <span class="s2">&quot;/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/logs-OA-continuous/sim-trace/training/training-simtrace&quot;</span> 
+
+<span class="c1"># 라이브러리 import</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 파일 목록 가져오기</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">)</span>
+
+<span class="c1"># 전처리한 데이터 프레임을 담을 리스트</span>
+<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 전처리</span>
+<span class="k">for</span> <span class="n">target_file</span> <span class="ow">in</span> <span class="n">file_list</span> <span class="p">:</span> 
+  <span class="n">target_iteration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">target_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">simtrace_path</span><span class="p">,</span> <span class="n">target_file</span><span class="p">)</span>
+
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+      <span class="n">csv_readlines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;iteration&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">line_text</span> <span class="ow">in</span> <span class="n">csv_readlines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="n">line_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;prepare&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;prepare&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;in_progress&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;off_track&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;crashed&#39;</span><span class="p">,</span><span class="s2">&quot;&#39;off_track&#39;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">target_iteration</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">)</span>
+
+  <span class="n">df_target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span>
+  <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_target</span><span class="p">)</span>
+
+<span class="c1"># 전처리 된 데이터프레임 병합</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df_final</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-e7b8ab33-0d39-4b1b-9074-55227ba41273">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iteration</th>
+      <th>episode</th>
+      <th>steps</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>yaw</th>
+      <th>steer</th>
+      <th>throttle</th>
+      <th>action</th>
+      <th>reward</th>
+      <th>done</th>
+      <th>all_wheels_on_track</th>
+      <th>progress</th>
+      <th>closest_waypoint</th>
+      <th>track_len</th>
+      <th>tstamp</th>
+      <th>episode_status</th>
+      <th>pause_duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.322513</td>
+      <td>2.691225</td>
+      <td>-84.006397</td>
+      <td>20.684077</td>
+      <td>0.875259</td>
+      <td>[20.68407682763616, 0.8752587687546034]</td>
+      <td>0.000</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.606227</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>25.280</td>
+      <td>prepare</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>0.322497</td>
+      <td>2.691373</td>
+      <td>-84.006075</td>
+      <td>30.000000</td>
+      <td>0.618596</td>
+      <td>[30.0, 0.6185960299640711]</td>
+      <td>5.001</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.605583</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>25.349</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>0.326084</td>
+      <td>2.683312</td>
+      <td>-83.384829</td>
+      <td>0.194598</td>
+      <td>1.000000</td>
+      <td>[0.19459804670664838, 1.0]</td>
+      <td>5.001</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.641881</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>25.415</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4.0</td>
+      <td>0.337351</td>
+      <td>2.664769</td>
+      <td>-81.130261</td>
+      <td>30.000000</td>
+      <td>0.637076</td>
+      <td>[30.0, 0.6370756020036588]</td>
+      <td>5.001</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.728602</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>25.480</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>5.0</td>
+      <td>0.354745</td>
+      <td>2.635282</td>
+      <td>-78.115526</td>
+      <td>16.587501</td>
+      <td>0.500000</td>
+      <td>[16.58750056401265, 0.5]</td>
+      <td>5.001</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.865491</td>
+      <td>1</td>
+      <td>23.118222</td>
+      <td>25.544</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3485</th>
+      <td>2</td>
+      <td>59</td>
+      <td>27.0</td>
+      <td>-0.273467</td>
+      <td>2.937214</td>
+      <td>-129.733517</td>
+      <td>-30.000000</td>
+      <td>0.958484</td>
+      <td>[-30.0, 0.9584840497542667]</td>
+      <td>4.002</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.424177</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>225.968</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3486</th>
+      <td>2</td>
+      <td>59</td>
+      <td>28.0</td>
+      <td>-0.327351</td>
+      <td>2.896705</td>
+      <td>-133.210847</td>
+      <td>26.223844</td>
+      <td>0.802901</td>
+      <td>[26.223843556662068, 0.8029013199197002]</td>
+      <td>4.002</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.588540</td>
+      <td>153</td>
+      <td>23.118222</td>
+      <td>226.029</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3487</th>
+      <td>2</td>
+      <td>59</td>
+      <td>29.0</td>
+      <td>-0.377556</td>
+      <td>2.855187</td>
+      <td>-135.088283</td>
+      <td>-30.000000</td>
+      <td>0.529313</td>
+      <td>[-30.0, 0.5293132074962505]</td>
+      <td>4.002</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.757997</td>
+      <td>154</td>
+      <td>23.118222</td>
+      <td>226.099</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3488</th>
+      <td>2</td>
+      <td>59</td>
+      <td>30.0</td>
+      <td>-0.419785</td>
+      <td>2.813709</td>
+      <td>-135.169548</td>
+      <td>-1.896201</td>
+      <td>1.000000</td>
+      <td>[-1.8962011571345982, 1.0]</td>
+      <td>4.002</td>
+      <td>False</td>
+      <td>False</td>
+      <td>4.928861</td>
+      <td>154</td>
+      <td>23.118222</td>
+      <td>226.164</td>
+      <td>in_progress</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3489</th>
+      <td>2</td>
+      <td>59</td>
+      <td>31.0</td>
+      <td>-0.465530</td>
+      <td>2.769014</td>
+      <td>-135.315574</td>
+      <td>14.610955</td>
+      <td>1.000000</td>
+      <td>[14.61095541112627, 1.0]</td>
+      <td>4.002</td>
+      <td>True</td>
+      <td>False</td>
+      <td>5.000000</td>
+      <td>0</td>
+      <td>23.118222</td>
+      <td>226.220</td>
+      <td>off_track</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3490 rows × 18 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e7b8ab33-0d39-4b1b-9074-55227ba41273')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-e7b8ab33-0d39-4b1b-9074-55227ba41273 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-e7b8ab33-0d39-4b1b-9074-55227ba41273');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>한계점<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>iteration.csv 파일에서 아쉽게도 여러 params의 정보들을 볼 수 없다.</p>
+<ul>
+<li><p>확인이 안되는 params 요소 : waypoints, track_width, objects_location 등등</p></li>
+</ul>
+</li>
+<li><p>참고로 Track Waypoints 는 아래 링크를 통해 확인 가능하다.</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks">https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks</a></p></li>
+</ul>
+</li>
+<li><p>다음 장에서 params에 있는 모든 요소들을 모두 print 하고 로그 기록들을 전처리하는 과정들을 살펴본다.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Basic/Log_Analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="03_download_logs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">download logs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05_print_all_params.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">모든 params 출력하기</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By dongorae (fanfrebird@naver.com)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
