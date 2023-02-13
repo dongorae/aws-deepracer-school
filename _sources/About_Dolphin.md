@@ -6,7 +6,6 @@
 - github : <https://github.com/dongorae/>
 <!-- - youtube : <https://www.youtube.com/channel/UCNNv6Pz8HFbsG5Epi5YDvpg> -->
 
----
 
 ## 이력
 - '인공지능과 자율주행' 강의
@@ -30,7 +29,6 @@
     - 군장병 인공지능 특강
     - 고등학생 대상 '수학으로 이해하는 인공지능' 특강
 
----
 
 ## 수상 및 자격
 - AWS Certified Solutions Architect - Associate

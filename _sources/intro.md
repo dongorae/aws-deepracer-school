@@ -8,7 +8,8 @@
   </iframe>
 </div>
 
-- 이곳은 Dolphin 강사의 AWS Deepracer 강의 자료를 정리한 공간입니다.
+- 이곳은 Dolphin 강사의 AWS Deepracer 강의 공간입니다.
+- 본 자료들은 AI Castle 과 공동 작업하였습니다.
 
 ```{caution}
 이 곳의 자료들은 저작권 보호를 받습니다. 서면 합의가 없는 자료 배포 및 공유를 금지합니다.
