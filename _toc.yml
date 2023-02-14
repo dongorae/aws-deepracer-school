@@ -57,6 +57,7 @@ parts:
       - file: Basic/Reward_Function/02_params
       - file: Basic/Reward_Function/03_Default_examples
       - file: Basic/Reward_Function/04_Reward_function_Lab
+      - file: Basic/Reward_Function/05_Track_Visualization.ipynb
   
     # Log_Analysis
     - file: Basic/Log_Analysis/01_개요
