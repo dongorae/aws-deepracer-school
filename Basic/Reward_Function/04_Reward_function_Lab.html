@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Log Analysis" href="../Log_Analysis/01_%EA%B0%9C%EC%9A%94.html" />
+    <link rel="next" title="Track 시각화" href="05_Track_Visualization.html" />
     <link rel="prev" title="기본 보상함수 예제" href="03_Default_examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -274,6 +274,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      보상함수 실험
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_Track_Visualization.html">
+     Track 시각화
     </a>
    </li>
   </ul>
@@ -510,6 +515,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Lab 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lab-2">
    Lab 2
   </a>
@@ -549,6 +559,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Lab 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lab-2">
    Lab 2
   </a>
@@ -583,6 +598,33 @@ title="Print to PDF"
   </iframe>
 </div><section id="lab-1">
 <h2>Lab 1<a class="headerlink" href="#lab-1" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>Track : <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">2019</span> <span class="pre">DeepRacer</span> <span class="pre">Championship</span> <span class="pre">Cup</span></code></p></li>
+<li><p>Race type : <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">trial</span></code></p></li>
+<li><p>algorithm : <code class="docutils literal notranslate"><span class="pre">PPO</span></code></p>
+<ul class="simple">
+<li><p>discount_factor = <code class="docutils literal notranslate"><span class="pre">0.999</span></code></p></li>
+<li><p>etc : default</p></li>
+</ul>
+</li>
+<li><p>action space : <code class="docutils literal notranslate"><span class="pre">Continuous</span></code></p>
+<ul class="simple">
+<li><p>speed : default</p></li>
+<li><p>teering angle : default</p></li>
+</ul>
+</li>
+<li><p>reward_function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>훈련 시간 : <code class="docutils literal notranslate"><span class="pre">60</span> <span class="pre">분</span></code></p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>Lab 1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>Track : <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">2019</span> <span class="pre">DeepRacer</span> <span class="pre">Championship</span> <span class="pre">Cup</span></code></p></li>
 <li><p>Race type : <code class="docutils literal notranslate"><span class="pre">Time</span> <span class="pre">trial</span></code></p></li>
@@ -754,10 +796,10 @@ title="Print to PDF"
             <p class="prev-next-title">기본 보상함수 예제</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Log_Analysis/01_%EA%B0%9C%EC%9A%94.html" title="next page">
+    <a class='right-next' id="next-link" href="05_Track_Visualization.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Log Analysis</p>
+        <p class="prev-next-title">Track 시각화</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
