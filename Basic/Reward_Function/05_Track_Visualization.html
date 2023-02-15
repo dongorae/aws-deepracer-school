@@ -510,27 +510,22 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#track-github">
+   Track github 레파지토리 가져오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Track 정보 확인
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   github 레파지토리 가져오기
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
    라이브러리 가져오기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    트랙 시각화 함수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    시각화
   </a>
  </li>
@@ -554,27 +549,22 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#track-github">
+   Track github 레파지토리 가져오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Track 정보 확인
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github">
-   github 레파지토리 가져오기
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
    라이브러리 가져오기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
+  <a class="reference internal nav-link" href="#id2">
    트랙 시각화 함수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id3">
    시각화
   </a>
  </li>
@@ -590,14 +580,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="track">
 <h1>Track 시각화<a class="headerlink" href="#track" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2>Track 정보 확인<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="track-github">
+<h2>Track github 레파지토리 가져오기<a class="headerlink" href="#track-github" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks">https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks</a></p></li>
+<li><p>Track 정보 확인 : <a class="reference external" href="https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks">https://github.com/aws-deepracer-community/deepracer-race-data/tree/main/raw_data/tracks</a></p></li>
 </ul>
-</section>
-<section id="github">
-<h2>github 레파지토리 가져오기<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aws-deepracer-community/deepracer-race-data.git
@@ -608,372 +595,367 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;deepracer-race-data&#39;...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 241427, done.
-remote: Counting objects:   0% (1/1820)
-remote: Counting objects:   1% (19/1820)
-remote: Counting objects:   2% (37/1820)
-remote: Counting objects:   3% (55/1820)
-remote: Counting objects:   4% (73/1820)
-remote: Counting objects:   5% (91/1820)
-remote: Counting objects:   6% (110/1820)
-remote: Counting objects:   7% (128/1820)
-remote: Counting objects:   8% (146/1820)
-remote: Counting objects:   9% (164/1820)
-remote: Counting objects:  10% (182/1820)
-remote: Counting objects:  11% (201/1820)
-remote: Counting objects:  12% (219/1820)
-remote: Counting objects:  13% (237/1820)
-remote: Counting objects:  14% (255/1820)
-remote: Counting objects:  15% (273/1820)
-remote: Counting objects:  16% (292/1820)
-remote: Counting objects:  17% (310/1820)
-remote: Counting objects:  18% (328/1820)
-remote: Counting objects:  19% (346/1820)
-remote: Counting objects:  20% (364/1820)
-remote: Counting objects:  21% (383/1820)
-remote: Counting objects:  22% (401/1820)
-remote: Counting objects:  23% (419/1820)
-remote: Counting objects:  24% (437/1820)
-remote: Counting objects:  25% (455/1820)
-remote: Counting objects:  26% (474/1820)
-remote: Counting objects:  27% (492/1820)
-remote: Counting objects:  28% (510/1820)
-remote: Counting objects:  29% (528/1820)
-remote: Counting objects:  30% (546/1820)
-remote: Counting objects:  31% (565/1820)
-remote: Counting objects:  32% (583/1820)
-remote: Counting objects:  33% (601/1820)
-remote: Counting objects:  34% (619/1820)
-remote: Counting objects:  35% (637/1820)
-remote: Counting objects:  36% (656/1820)
-remote: Counting objects:  37% (674/1820)
-remote: Counting objects:  38% (692/1820)
-remote: Counting objects:  39% (710/1820)
-remote: Counting objects:  40% (728/1820)
-remote: Counting objects:  41% (747/1820)
-remote: Counting objects:  42% (765/1820)
-remote: Counting objects:  43% (783/1820)
-remote: Counting objects:  44% (801/1820)
-remote: Counting objects:  45% (819/1820)
-remote: Counting objects:  46% (838/1820)
-remote: Counting objects:  47% (856/1820)
-remote: Counting objects:  48% (874/1820)
-remote: Counting objects:  49% (892/1820)
-remote: Counting objects:  50% (910/1820)
-remote: Counting objects:  51% (929/1820)
-remote: Counting objects:  52% (947/1820)
-remote: Counting objects:  53% (965/1820)
-remote: Counting objects:  54% (983/1820)
-remote: Counting objects:  55% (1001/1820)
-remote: Counting objects:  56% (1020/1820)
-remote: Counting objects:  57% (1038/1820)
-remote: Counting objects:  58% (1056/1820)
-remote: Counting objects:  59% (1074/1820)
-remote: Counting objects:  60% (1092/1820)
-remote: Counting objects:  61% (1111/1820)
-remote: Counting objects:  62% (1129/1820)
-remote: Counting objects:  63% (1147/1820)
-remote: Counting objects:  64% (1165/1820)
-remote: Counting objects:  65% (1183/1820)
-remote: Counting objects:  66% (1202/1820)
-remote: Counting objects:  67% (1220/1820)
-remote: Counting objects:  68% (1238/1820)
-remote: Counting objects:  69% (1256/1820)
-remote: Counting objects:  70% (1274/1820)
-remote: Counting objects:  71% (1293/1820)
-remote: Counting objects:  72% (1311/1820)
-remote: Counting objects:  73% (1329/1820)
-remote: Counting objects:  74% (1347/1820)
-remote: Counting objects:  75% (1365/1820)
-remote: Counting objects:  76% (1384/1820)
-remote: Counting objects:  77% (1402/1820)
-remote: Counting objects:  78% (1420/1820)
-remote: Counting objects:  79% (1438/1820)
-remote: Counting objects:  80% (1456/1820)
-remote: Counting objects:  81% (1475/1820)
-remote: Counting objects:  82% (1493/1820)
-remote: Counting objects:  83% (1511/1820)
-remote: Counting objects:  84% (1529/1820)
-remote: Counting objects:  85% (1547/1820)
-remote: Counting objects:  86% (1566/1820)
-remote: Counting objects:  87% (1584/1820)
-remote: Counting objects:  88% (1602/1820)
-remote: Counting objects:  89% (1620/1820)
-remote: Counting objects:  90% (1638/1820)
-remote: Counting objects:  91% (1657/1820)
-remote: Counting objects:  92% (1675/1820)
-remote: Counting objects:  93% (1693/1820)
-remote: Counting objects:  94% (1711/1820)
-remote: Counting objects:  95% (1729/1820)
-remote: Counting objects:  96% (1748/1820)
-remote: Counting objects:  97% (1766/1820)
-remote: Counting objects:  98% (1784/1820)
-remote: Counting objects:  99% (1802/1820)
-remote: Counting objects: 100% (1820/1820)
-remote: Counting objects: 100% (1820/1820), done.
-remote: Compressing objects:   0% (1/721)
-remote: Compressing objects:   1% (8/721)
-remote: Compressing objects:   2% (15/721)
-remote: Compressing objects:   3% (22/721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 241639, done.
+remote: Counting objects:   0% (1/2032)
+remote: Counting objects:   1% (21/2032)
+remote: Counting objects:   2% (41/2032)
+remote: Counting objects:   3% (61/2032)
+remote: Counting objects:   4% (82/2032)
+remote: Counting objects:   5% (102/2032)
+remote: Counting objects:   6% (122/2032)
+remote: Counting objects:   7% (143/2032)
+remote: Counting objects:   8% (163/2032)
+remote: Counting objects:   9% (183/2032)
+remote: Counting objects:  10% (204/2032)
+remote: Counting objects:  11% (224/2032)
+remote: Counting objects:  12% (244/2032)
+remote: Counting objects:  13% (265/2032)
+remote: Counting objects:  14% (285/2032)
+remote: Counting objects:  15% (305/2032)
+remote: Counting objects:  16% (326/2032)
+remote: Counting objects:  17% (346/2032)
+remote: Counting objects:  18% (366/2032)
+remote: Counting objects:  19% (387/2032)
+remote: Counting objects:  20% (407/2032)
+remote: Counting objects:  21% (427/2032)
+remote: Counting objects:  22% (448/2032)
+remote: Counting objects:  23% (468/2032)
+remote: Counting objects:  24% (488/2032)
+remote: Counting objects:  25% (508/2032)
+remote: Counting objects:  26% (529/2032)
+remote: Counting objects:  27% (549/2032)
+remote: Counting objects:  28% (569/2032)
+remote: Counting objects:  29% (590/2032)
+remote: Counting objects:  30% (610/2032)
+remote: Counting objects:  31% (630/2032)
+remote: Counting objects:  32% (651/2032)
+remote: Counting objects:  33% (671/2032)
+remote: Counting objects:  34% (691/2032)
+remote: Counting objects:  35% (712/2032)
+remote: Counting objects:  36% (732/2032)
+remote: Counting objects:  37% (752/2032)
+remote: Counting objects:  38% (773/2032)
+remote: Counting objects:  39% (793/2032)
+remote: Counting objects:  40% (813/2032)
+remote: Counting objects:  41% (834/2032)
+remote: Counting objects:  42% (854/2032)
+remote: Counting objects:  43% (874/2032)
+remote: Counting objects:  44% (895/2032)
+remote: Counting objects:  45% (915/2032)
+remote: Counting objects:  46% (935/2032)
+remote: Counting objects:  47% (956/2032)
+remote: Counting objects:  48% (976/2032)
+remote: Counting objects:  49% (996/2032)
+remote: Counting objects:  50% (1016/2032)
+remote: Counting objects:  51% (1037/2032)
+remote: Counting objects:  52% (1057/2032)
+remote: Counting objects:  53% (1077/2032)
+remote: Counting objects:  54% (1098/2032)
+remote: Counting objects:  55% (1118/2032)
+remote: Counting objects:  56% (1138/2032)
+remote: Counting objects:  57% (1159/2032)
+remote: Counting objects:  58% (1179/2032)
+remote: Counting objects:  59% (1199/2032)
+remote: Counting objects:  60% (1220/2032)
+remote: Counting objects:  61% (1240/2032)
+remote: Counting objects:  62% (1260/2032)
+remote: Counting objects:  63% (1281/2032)
+remote: Counting objects:  64% (1301/2032)
+remote: Counting objects:  65% (1321/2032)
+remote: Counting objects:  66% (1342/2032)
+remote: Counting objects:  67% (1362/2032)
+remote: Counting objects:  68% (1382/2032)
+remote: Counting objects:  69% (1403/2032)
+remote: Counting objects:  70% (1423/2032)
+remote: Counting objects:  71% (1443/2032)
+remote: Counting objects:  72% (1464/2032)
+remote: Counting objects:  73% (1484/2032)
+remote: Counting objects:  74% (1504/2032)
+remote: Counting objects:  75% (1524/2032)
+remote: Counting objects:  76% (1545/2032)
+remote: Counting objects:  77% (1565/2032)
+remote: Counting objects:  78% (1585/2032)
+remote: Counting objects:  79% (1606/2032)
+remote: Counting objects:  80% (1626/2032)
+remote: Counting objects:  81% (1646/2032)
+remote: Counting objects:  82% (1667/2032)
+remote: Counting objects:  83% (1687/2032)
+remote: Counting objects:  84% (1707/2032)
+remote: Counting objects:  85% (1728/2032)
+remote: Counting objects:  86% (1748/2032)
+remote: Counting objects:  87% (1768/2032)
+remote: Counting objects:  88% (1789/2032)
+remote: Counting objects:  89% (1809/2032)
+remote: Counting objects:  90% (1829/2032)
+remote: Counting objects:  91% (1850/2032)
+remote: Counting objects:  92% (1870/2032)
+remote: Counting objects:  93% (1890/2032)
+remote: Counting objects:  94% (1911/2032)
+remote: Counting objects:  95% (1931/2032)
+remote: Counting objects:  96% (1951/2032)
+remote: Counting objects:  97% (1972/2032)
+remote: Counting objects:  98% (1992/2032)
+remote: Counting objects:  99% (2012/2032)
+remote: Counting objects: 100% (2032/2032)
+remote: Counting objects: 100% (2032/2032), done.
+remote: Compressing objects:   0% (1/671)
+remote: Compressing objects:   1% (7/671)
+remote: Compressing objects:   2% (14/671)
+remote: Compressing objects:   3% (21/671)
+remote: Compressing objects:   4% (27/671)
+remote: Compressing objects:   5% (34/671)
+remote: Compressing objects:   6% (41/671)
+remote: Compressing objects:   7% (47/671)
+remote: Compressing objects:   8% (54/671)
+remote: Compressing objects:   9% (61/671)
+remote: Compressing objects:  10% (68/671)
+remote: Compressing objects:  11% (74/671)
+remote: Compressing objects:  12% (81/671)
+remote: Compressing objects:  13% (88/671)
+remote: Compressing objects:  14% (94/671)
+remote: Compressing objects:  15% (101/671)
+remote: Compressing objects:  16% (108/671)
+remote: Compressing objects:  17% (115/671)
+remote: Compressing objects:  18% (121/671)
+remote: Compressing objects:  19% (128/671)
+remote: Compressing objects:  20% (135/671)
+remote: Compressing objects:  21% (141/671)
+remote: Compressing objects:  22% (148/671)
+remote: Compressing objects:  23% (155/671)
+remote: Compressing objects:  24% (162/671)
+remote: Compressing objects:  25% (168/671)
+remote: Compressing objects:  26% (175/671)
+remote: Compressing objects:  27% (182/671)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:   4% (29/721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:  28% (188/671)
+remote: Compressing objects:  29% (195/671)
+remote: Compressing objects:  30% (202/671)
+remote: Compressing objects:  31% (209/671)
+remote: Compressing objects:  32% (215/671)
+remote: Compressing objects:  33% (222/671)
+remote: Compressing objects:  34% (229/671)
+remote: Compressing objects:  35% (235/671)
+remote: Compressing objects:  36% (242/671)
+remote: Compressing objects:  37% (249/671)
+remote: Compressing objects:  38% (255/671)
+remote: Compressing objects:  39% (262/671)
+remote: Compressing objects:  40% (269/671)
+remote: Compressing objects:  41% (276/671)
+remote: Compressing objects:  42% (282/671)
+remote: Compressing objects:  43% (289/671)
+remote: Compressing objects:  44% (296/671)
+remote: Compressing objects:  45% (302/671)
+remote: Compressing objects:  46% (309/671)
+remote: Compressing objects:  47% (316/671)
+remote: Compressing objects:  48% (323/671)
+remote: Compressing objects:  49% (329/671)
+remote: Compressing objects:  50% (336/671)
+remote: Compressing objects:  51% (343/671)
+remote: Compressing objects:  52% (349/671)
+remote: Compressing objects:  53% (356/671)
+remote: Compressing objects:  54% (363/671)
+remote: Compressing objects:  55% (370/671)
+remote: Compressing objects:  56% (376/671)
+remote: Compressing objects:  57% (383/671)
+remote: Compressing objects:  58% (390/671)
+remote: Compressing objects:  59% (396/671)
+remote: Compressing objects:  60% (403/671)
+remote: Compressing objects:  61% (410/671)
+remote: Compressing objects:  62% (417/671)
+remote: Compressing objects:  63% (423/671)
+remote: Compressing objects:  64% (430/671)
+remote: Compressing objects:  65% (437/671)
+remote: Compressing objects:  66% (443/671)
+remote: Compressing objects:  67% (450/671)
+remote: Compressing objects:  68% (457/671)
+remote: Compressing objects:  69% (463/671)
+remote: Compressing objects:  70% (470/671)
+remote: Compressing objects:  71% (477/671)
+remote: Compressing objects:  72% (484/671)
+remote: Compressing objects:  73% (490/671)
+remote: Compressing objects:  74% (497/671)
+remote: Compressing objects:  75% (504/671)
+remote: Compressing objects:  76% (510/671)
+remote: Compressing objects:  77% (517/671)
+remote: Compressing objects:  78% (524/671)
+remote: Compressing objects:  79% (531/671)
+remote: Compressing objects:  80% (537/671)
+remote: Compressing objects:  81% (544/671)
+remote: Compressing objects:  82% (551/671)
+remote: Compressing objects:  83% (557/671)
+remote: Compressing objects:  84% (564/671)
+remote: Compressing objects:  85% (571/671)
+remote: Compressing objects:  86% (578/671)
+remote: Compressing objects:  87% (584/671)
+remote: Compressing objects:  88% (591/671)
+remote: Compressing objects:  89% (598/671)
+remote: Compressing objects:  90% (604/671)
+remote: Compressing objects:  91% (611/671)
+remote: Compressing objects:  92% (618/671)
+remote: Compressing objects:  93% (625/671)
+remote: Compressing objects:  94% (631/671)
+remote: Compressing objects:  95% (638/671)
+remote: Compressing objects:  96% (645/671)
+remote: Compressing objects:  97% (651/671)
+remote: Compressing objects:  98% (658/671)
+remote: Compressing objects:  99% (665/671)
+remote: Compressing objects: 100% (671/671)
+remote: Compressing objects: 100% (671/671), done.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:   5% (37/721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   0% (1/241639)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:   6% (44/721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   1% (2417/241639), 268.01 KiB | 491.00 KiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:   7% (51/721)
-remote: Compressing objects:   8% (58/721)
-remote: Compressing objects:   9% (65/721)
-remote: Compressing objects:  10% (73/721)
-remote: Compressing objects:  11% (80/721)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   2% (4833/241639), 268.01 KiB | 491.00 KiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Compressing objects:  12% (87/721)
-remote: Compressing objects:  13% (94/721)
-remote: Compressing objects:  14% (101/721)
-remote: Compressing objects:  15% (109/721)
-remote: Compressing objects:  16% (116/721)
-remote: Compressing objects:  17% (123/721)
-remote: Compressing objects:  18% (130/721)
-remote: Compressing objects:  19% (137/721)
-remote: Compressing objects:  20% (145/721)
-remote: Compressing objects:  21% (152/721)
-remote: Compressing objects:  22% (159/721)
-remote: Compressing objects:  23% (166/721)
-remote: Compressing objects:  24% (174/721)
-remote: Compressing objects:  25% (181/721)
-remote: Compressing objects:  26% (188/721)
-remote: Compressing objects:  27% (195/721)
-remote: Compressing objects:  28% (202/721)
-remote: Compressing objects:  29% (210/721)
-remote: Compressing objects:  30% (217/721)
-remote: Compressing objects:  31% (224/721)
-remote: Compressing objects:  32% (231/721)
-remote: Compressing objects:  33% (238/721)
-remote: Compressing objects:  34% (246/721)
-remote: Compressing objects:  35% (253/721)
-remote: Compressing objects:  36% (260/721)
-remote: Compressing objects:  37% (267/721)
-remote: Compressing objects:  38% (274/721)
-remote: Compressing objects:  39% (282/721)
-remote: Compressing objects:  40% (289/721)
-remote: Compressing objects:  41% (296/721)
-remote: Compressing objects:  42% (303/721)
-remote: Compressing objects:  43% (311/721)
-remote: Compressing objects:  44% (318/721)
-remote: Compressing objects:  45% (325/721)
-remote: Compressing objects:  46% (332/721)
-remote: Compressing objects:  47% (339/721)
-remote: Compressing objects:  48% (347/721)
-remote: Compressing objects:  49% (354/721)
-remote: Compressing objects:  50% (361/721)
-remote: Compressing objects:  51% (368/721)
-remote: Compressing objects:  52% (375/721)
-remote: Compressing objects:  53% (383/721)
-remote: Compressing objects:  54% (390/721)
-remote: Compressing objects:  55% (397/721)
-remote: Compressing objects:  56% (404/721)
-remote: Compressing objects:  57% (411/721)
-remote: Compressing objects:  58% (419/721)
-remote: Compressing objects:  59% (426/721)
-remote: Compressing objects:  60% (433/721)
-remote: Compressing objects:  61% (440/721)
-remote: Compressing objects:  62% (448/721)
-remote: Compressing objects:  63% (455/721)
-remote: Compressing objects:  64% (462/721)
-remote: Compressing objects:  65% (469/721)
-remote: Compressing objects:  66% (476/721)
-remote: Compressing objects:  67% (484/721)
-remote: Compressing objects:  68% (491/721)
-remote: Compressing objects:  69% (498/721)
-remote: Compressing objects:  70% (505/721)
-remote: Compressing objects:  71% (512/721)
-remote: Compressing objects:  72% (520/721)
-remote: Compressing objects:  73% (527/721)
-remote: Compressing objects:  74% (534/721)
-remote: Compressing objects:  75% (541/721)
-remote: Compressing objects:  76% (548/721)
-remote: Compressing objects:  77% (556/721)
-remote: Compressing objects:  78% (563/721)
-remote: Compressing objects:  79% (570/721)
-remote: Compressing objects:  80% (577/721)
-remote: Compressing objects:  81% (585/721)
-remote: Compressing objects:  82% (592/721)
-remote: Compressing objects:  83% (599/721)
-remote: Compressing objects:  84% (606/721)
-remote: Compressing objects:  85% (613/721)
-remote: Compressing objects:  86% (621/721)
-remote: Compressing objects:  87% (628/721)
-remote: Compressing objects:  88% (635/721)
-remote: Compressing objects:  89% (642/721)
-remote: Compressing objects:  90% (649/721)
-remote: Compressing objects:  91% (657/721)
-remote: Compressing objects:  92% (664/721)
-remote: Compressing objects:  93% (671/721)
-remote: Compressing objects:  94% (678/721)
-remote: Compressing objects:  95% (685/721)
-remote: Compressing objects:  96% (693/721)
-remote: Compressing objects:  97% (700/721)
-remote: Compressing objects:  98% (707/721)
-remote: Compressing objects:  99% (714/721)
-remote: Compressing objects: 100% (721/721)
-remote: Compressing objects: 100% (721/721), done.
-Receiving objects:   0% (1/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   3% (7250/241639), 268.01 KiB | 491.00 KiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   1% (2415/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   4% (9666/241639), 268.01 KiB | 491.00 KiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   2% (4829/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   4% (11391/241639), 268.01 KiB | 491.00 KiB/s
+Receiving objects:   5% (12082/241639), 268.01 KiB | 491.00 KiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   3% (7243/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   6% (14499/241639), 1.85 MiB | 1.79 MiB/s    
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   4% (9658/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   7% (16915/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   5% (12072/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   8% (19332/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   6% (14486/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   9% (21748/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   7% (16900/241427)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  10% (24164/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   8% (19315/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  11% (26581/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:   9% (21729/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  12% (28997/241639), 1.85 MiB | 1.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  10% (24143/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  13% (31414/241639), 4.50 MiB | 2.93 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  11% (26557/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  14% (33830/241639), 4.50 MiB | 2.93 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  12% (28972/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  14% (34752/241639), 4.50 MiB | 2.93 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  13% (31386/241427), 2.54 MiB | 5.06 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (36246/241639), 8.49 MiB | 3.34 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  13% (32876/241427), 4.97 MiB | 4.96 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (36675/241639), 8.49 MiB | 3.34 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  14% (33800/241427), 4.97 MiB | 4.96 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (37471/241639), 12.45 MiB | 3.51 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (36215/241427), 7.47 MiB | 4.97 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (38181/241639), 16.45 MiB | 3.62 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (36596/241427), 9.84 MiB | 4.90 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (38663/241639), 20.00 MiB | 4.02 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (37551/241427), 12.31 MiB | 4.91 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (39336/241639), 20.00 MiB | 4.02 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  15% (38333/241427), 17.13 MiB | 4.89 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (39564/241639), 23.59 MiB | 3.76 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (38629/241427), 19.34 MiB | 4.83 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (39757/241639), 27.53 MiB | 3.79 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (39475/241427), 21.58 MiB | 4.79 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41079/241639), 31.83 MiB | 3.87 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  16% (39702/241427), 26.04 MiB | 4.67 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41169/241639), 31.83 MiB | 3.87 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41043/241427), 30.54 MiB | 4.59 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41813/241639), 35.50 MiB | 3.83 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41100/241427), 30.54 MiB | 4.59 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (42438/241639), 39.68 MiB | 3.89 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (41820/241427), 35.00 MiB | 4.48 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  18% (43496/241639), 43.93 MiB | 4.06 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  17% (42472/241427), 39.77 MiB | 4.53 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  18% (44466/241639), 43.93 MiB | 4.06 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  18% (43457/241427), 42.11 MiB | 4.55 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (45912/241639), 46.11 MiB | 4.11 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (45872/241427), 44.59 MiB | 4.61 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46294/241639), 48.43 MiB | 4.12 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (45996/241427), 44.59 MiB | 4.61 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46440/241639), 52.97 MiB | 4.28 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46343/241427), 49.42 MiB | 4.69 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46553/241639), 57.09 MiB | 4.30 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46479/241427), 54.11 MiB | 4.74 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (48328/241639), 61.64 MiB | 4.36 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  19% (46603/241427), 58.71 MiB | 4.71 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (49572/241639), 61.64 MiB | 4.36 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (48286/241427), 61.02 MiB | 4.71 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (50115/241639), 65.91 MiB | 4.35 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (49974/241427), 63.49 MiB | 4.74 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (50596/241639), 69.92 MiB | 4.21 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  20% (50244/241427), 68.16 MiB | 4.68 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (50745/241639), 72.06 MiB | 4.20 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (50700/241427), 71.73 MiB | 4.42 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (50857/241639), 74.14 MiB | 4.17 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (50762/241427), 71.73 MiB | 4.42 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (51861/241639), 78.50 MiB | 4.24 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (50938/241427), 76.00 MiB | 4.33 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (52139/241639), 82.53 MiB | 4.16 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (52013/241427), 79.88 MiB | 4.16 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (52329/241639), 86.42 MiB | 4.09 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  21% (52231/241427), 83.87 MiB | 3.94 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (53161/241639), 88.40 MiB | 4.09 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (53114/241427), 87.91 MiB | 4.02 MiB/s
-Receiving objects:  22% (53115/241427), 87.91 MiB | 4.02 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (54160/241639), 90.49 MiB | 4.07 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (54825/241427), 91.93 MiB | 3.97 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (55191/241639), 94.22 MiB | 3.97 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  22% (55518/241427), 95.75 MiB | 3.95 MiB/s
-Receiving objects:  23% (55529/241427), 95.75 MiB | 3.95 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (55577/241639), 96.13 MiB | 3.90 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (55908/241427), 99.73 MiB | 3.91 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (55727/241639), 98.16 MiB | 3.93 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56396/241427), 103.32 MiB | 3.84 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56173/241639), 102.37 MiB | 3.99 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56671/241427), 107.15 MiB | 3.78 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56674/241639), 106.95 MiB | 4.12 MiB/s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56889/241427), 110.74 MiB | 3.76 MiB/s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (57436/241427), 114.86 MiB | 3.77 MiB/s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (57765/241427), 118.50 MiB | 3.76 MiB/s
-Receiving objects:  24% (57943/241427), 118.50 MiB | 3.76 MiB/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Receiving objects:  23% (56910/241639), 111.45 MiB | 4.22 MiB/s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
@@ -982,8 +964,8 @@ Receiving objects:  24% (57943/241427), 118.50 MiB | 3.76 MiB/s
 </div>
 </div>
 </section>
-<section id="id2">
-<h2>라이브러리 가져오기<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h2>라이브러리 가져오기<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -996,8 +978,8 @@ Receiving objects:  24% (57943/241427), 118.50 MiB | 3.76 MiB/s
 </div>
 </div>
 </section>
-<section id="id3">
-<h2>트랙 시각화 함수<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>트랙 시각화 함수<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">track_show</span><span class="p">(</span><span class="n">track_arr</span><span class="p">,</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)):</span>
@@ -1026,8 +1008,8 @@ Receiving objects:  24% (57943/241427), 118.50 MiB | 3.76 MiB/s
 </div>
 </div>
 </section>
-<section id="id4">
-<h2>시각화<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h2>시각화<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>numpy_file_name : numpy 파일명</p></li>
 <li><p>track_show 변수</p>
@@ -1049,7 +1031,7 @@ Receiving objects:  24% (57943/241427), 118.50 MiB | 3.76 MiB/s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/05_Track_Visualization_9_0.png" src="../../_images/05_Track_Visualization_9_0.png" />
+<img alt="../../_images/05_Track_Visualization_8_0.png" src="../../_images/05_Track_Visualization_8_0.png" />
 </div>
 </div>
 </section>
