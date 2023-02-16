@@ -17,17 +17,47 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from google.colab import drive
+# iteration.csv 파일이 존재하는 폴더 경로 지정
+simtrace_path = "/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/test-training-job/sim-trace/training/training-simtrace" 
 
-drive.mount("./gdrive")
+# 파일 목록 가져오기
+file_list = os.listdir(simtrace_path)
+
+# 전처리한 데이터 프레임을 담을 리스트
+df_list = []
+
+# 전처리
+for target_file in file_list : 
+  target_iteration = int(target_file.split('-')[0])
+  target_path = os.path.join(simtrace_path, target_file)
+
+  with open(target_path) as f :
+      csv_readlines = f.readlines()
+
+  columns = ['iteration'] + csv_readlines[0].replace('\n','').split(',')
+  data = []
+  for line_text in csv_readlines[1:] :
+    row = eval('[' + line_text.replace('\n','').replace('prepare', "'prepare'").replace('in_progress', "'in_progress'").replace('off_track', "'off_track'").replace('crashed',"'off_track'").replace('lap_complete',"'lap_complete'") + ']')
+    data.append([target_iteration] + row)
+
+  df_target = pd.DataFrame(columns = columns, data = data)
+  df_list.append(df_target)
+
+# 전처리 된 데이터프레임 병합
+df_data = pd.concat(df_list).reset_index(drop=True)
+
+df_data
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[2], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgoogle[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolab[39;00m [38;5;28;01mimport[39;00m drive
-[1;32m      3[0m drive[38;5;241m.[39mmount([38;5;124m"[39m[38;5;124m./gdrive[39m[38;5;124m"[39m)
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[3], line 5[0m
+[1;32m      2[0m simtrace_path [38;5;241m=[39m [38;5;124m"[39m[38;5;124m/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/test-training-job/sim-trace/training/training-simtrace[39m[38;5;124m"[39m 
+[1;32m      4[0m [38;5;66;03m# 파일 목록 가져오기[39;00m
+[0;32m----> 5[0m file_list [38;5;241m=[39m [43mos[49m[38;5;241;43m.[39;49m[43mlistdir[49m[43m([49m[43msimtrace_path[49m[43m)[49m
+[1;32m      7[0m [38;5;66;03m# 전처리한 데이터 프레임을 담을 리스트[39;00m
+[1;32m      8[0m df_list [38;5;241m=[39m []
 
-[0;31mModuleNotFoundError[0m: No module named 'google.colab'
-ModuleNotFoundError: No module named 'google.colab'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/test-training-job/sim-trace/training/training-simtrace'
+FileNotFoundError: [Errno 2] No such file or directory: '/content/gdrive/MyDrive/deepracer-lecture-open-data/download_logs_sample/test-training-job/sim-trace/training/training-simtrace'
 
