@@ -11,23 +11,26 @@ parts:
   - caption: Basic Course
     chapters:
 
-    # AWS_Deepracer_Overview
-    - file: Basic/AWS_Deepracer_Overview/01_개요
+    # s01_Introduction
+    - file: Basic/Introduction/01_개요
       sections:
-      - file: Basic/AWS_Deepracer_Overview/02_Deepracer란
-      - file: Basic/AWS_Deepracer_Overview/03_클라우드_컴퓨팅과_AWS
-      - file: Basic/AWS_Deepracer_Overview/04_Deepracer_워크플로우
-      - file: Basic/AWS_Deepracer_Overview/05_Deepracer_작동원리
-      - file: Basic/AWS_Deepracer_Overview/06_Deepracer_요금_정책
-      - file: Basic/AWS_Deepracer_Overview/07_AWS_가입
-      - file: Basic/AWS_Deepracer_Overview/08_AWS_계정_설정
-      - file: Basic/AWS_Deepracer_Overview/09_Deepracer_콘솔_둘러보기
+      - file: Basic/Introduction/02_Deepracer란
+      - file: Basic/Introduction/03_클라우드_컴퓨팅과_AWS
+      - file: Basic/Introduction/04_Deepracer_워크플로우
+      - file: Basic/Introduction/05_Deepracer_작동원리
+      - file: Basic/Introduction/06_Deepracer_요금_정책
 
-    # Model_Training
-    - file: Basic/Model_Training/01_개요
-      # sections:
-      # - file: Basic/Model_Training/01_DNN모델과_딥러닝
-      # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
+    # s01_AWS_Account
+    - file: Basic/AWS_Account/01_개요
+      sections:
+      - file: Basic/AWS_Account/07_AWS_가입
+      - file: Basic/AWS_Account/08_AWS_계정_설정
+
+    # Get_Started
+    - file: Basic/Get_Started/01_개요
+      sections:
+      - file: Basic/Get_Started/09_Deepracer_콘솔_둘러보기
+      # - file: Basic/Get_Started/02_CNN모델과_컴퓨터비전
 
     # Reinforcement_Learning
     - file: Basic/Reinforcement_Learning/01_개요
