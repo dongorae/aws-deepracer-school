@@ -77,13 +77,17 @@ parts:
       # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
       # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
 
+    # DRfC
+    - file: Basic/DRfC/01_개요
+      sections:
+      - file: Basic/Etc/05_DRfC      
+
     # Etc
     - file: Basic/Etc/01_개요
       sections:
       - file: Basic/Etc/02_multi_user_mode
       - file: Basic/Etc/03_Racing_League  
       - file: Basic/Etc/04_Import_and_Export_Model  
-      - file: Basic/Etc/05_DRfC  
 
 
   # ###################
