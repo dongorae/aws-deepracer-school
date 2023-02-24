@@ -11,15 +11,15 @@ parts:
   - caption: Basic Course
     chapters:
 
-    # s01_Introduction
-    - file: Basic/What_is_AWS_Deepracer/01_섹션소개
+    # s01_What_is_AWS_DeepRacer
+    - file: Basic/What_is_AWS_DeepRacer/01_섹션소개
       sections:
-      - file: Basic/What_is_AWS_Deepracer/02_Deepracer란
-      - file: Basic/What_is_AWS_Deepracer/03_배울수_있는것
-      - file: Basic/What_is_AWS_Deepracer/04_클라우드_컴퓨팅과_AWS
-      - file: Basic/What_is_AWS_Deepracer/05_Deepracer_워크플로우
-      - file: Basic/What_is_AWS_Deepracer/06_Deepracer_작동원리
-      - file: Basic/What_is_AWS_Deepracer/07_Deepracer_요금_정책
+      - file: Basic/What_is_AWS_DeepRacer/02_DeepRacer란
+      - file: Basic/What_is_AWS_DeepRacer/03_배울수_있는것
+      - file: Basic/What_is_AWS_DeepRacer/04_클라우드_컴퓨팅과_AWS
+      - file: Basic/What_is_AWS_DeepRacer/05_DeepRacer_워크플로우
+      - file: Basic/What_is_AWS_DeepRacer/06_DeepRacer_작동원리
+      - file: Basic/What_is_AWS_DeepRacer/07_DeepRacer_요금_정책
 
     # s02_AWS_Account
     - file: Basic/AWS_Account/01_섹션소개
@@ -27,17 +27,17 @@ parts:
       - file: Basic/AWS_Account/07_AWS_가입
       - file: Basic/AWS_Account/08_AWS_계정_설정
 
-    # s03_Deepracer_Console
-    - file: Basic/Deepracer_Console/01_섹션소개
+    # DeepRacer_Console
+    - file: Basic/DeepRacer_Console/01_섹션소개
       sections:
-      - file: Basic/Deepracer_Console/02_Deepracer_콘솔_둘러보기
-      - file: Basic/Deepracer_Console/03_Racing_League
-      # - file: Basic/Deepracer_Console/02_CNN모델과_컴퓨터비전
+      - file: Basic/DeepRacer_Console/02_DeepRacer_콘솔_둘러보기
+      - file: Basic/DeepRacer_Console/03_Racing_League
+      # - file: Basic/DeepRacer_Console/02_CNN모델과_컴퓨터비전
 
     # s04_Model_Training
     - file: Basic/Model_Training/01_섹션소개
       # sections:
-      # - file: Basic/Model_Training/09_Deepracer_콘솔_둘러보기
+      # - file: Basic/Model_Training/09_DeepRacer_콘솔_둘러보기
       # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
 
     # s05_Reinforcement_Learning
@@ -46,20 +46,20 @@ parts:
       # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
       # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
 
-    # s06_Python_for_Deepracer
-    - file: Basic/Python_for_Deepracer/01_섹션소개
+    # s06_Python_for_DeepRacer
+    - file: Basic/Python_for_DeepRacer/01_섹션소개
       sections:
-      - file: Basic/Python_for_Deepracer/02_python과_colab
-      - file: Basic/Python_for_Deepracer/03_출력과_변수
-      - file: Basic/Python_for_Deepracer/04_자료형
-      - file: Basic/Python_for_Deepracer/05_연산
-      - file: Basic/Python_for_Deepracer/06_리스트_다루기
-      - file: Basic/Python_for_Deepracer/07_math_라이브러리
-      - file: Basic/Python_for_Deepracer/08_if_조건문
-      - file: Basic/Python_for_Deepracer/09_for_반복문
-      - file: Basic/Python_for_Deepracer/10_while_조건반복문
-      - file: Basic/Python_for_Deepracer/11_함수
-      # - file: Basic/Python_for_Deepracer/12_클래스
+      - file: Basic/Python_for_DeepRacer/02_python과_colab
+      - file: Basic/Python_for_DeepRacer/03_출력과_변수
+      - file: Basic/Python_for_DeepRacer/04_자료형
+      - file: Basic/Python_for_DeepRacer/05_연산
+      - file: Basic/Python_for_DeepRacer/06_리스트_다루기
+      - file: Basic/Python_for_DeepRacer/07_math_라이브러리
+      - file: Basic/Python_for_DeepRacer/08_if_조건문
+      - file: Basic/Python_for_DeepRacer/09_for_반복문
+      - file: Basic/Python_for_DeepRacer/10_while_조건반복문
+      - file: Basic/Python_for_DeepRacer/11_함수
+      # - file: Basic/Python_for_DeepRacer/12_클래스
   
     # s07_Reward_Function
     - file: Basic/Reward_Function/01_섹션소개
@@ -88,7 +88,7 @@ parts:
     # s10_Tips
     - file: Basic/Tips/01_섹션소개
       sections:
-      - file: Basic/Tips/02_Deepracer_Student  
+      - file: Basic/Tips/02_DeepRacer_Student  
       - file: Basic/Tips/03_Import_and_Export_Model  
       - file: Basic/Tips/04_multi_user_mode    
       - file: Basic/Tips/05_Auto_Submit
