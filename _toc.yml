@@ -15,10 +15,11 @@ parts:
     - file: Basic/What_is_AWS_Deepracer/01_섹션소개
       sections:
       - file: Basic/What_is_AWS_Deepracer/02_Deepracer란
-      - file: Basic/What_is_AWS_Deepracer/03_클라우드_컴퓨팅과_AWS
-      - file: Basic/What_is_AWS_Deepracer/04_Deepracer_워크플로우
-      - file: Basic/What_is_AWS_Deepracer/05_Deepracer_작동원리
-      - file: Basic/What_is_AWS_Deepracer/06_Deepracer_요금_정책
+      - file: Basic/What_is_AWS_Deepracer/03_배울수_있는것
+      - file: Basic/What_is_AWS_Deepracer/04_클라우드_컴퓨팅과_AWS
+      - file: Basic/What_is_AWS_Deepracer/05_Deepracer_워크플로우
+      - file: Basic/What_is_AWS_Deepracer/06_Deepracer_작동원리
+      - file: Basic/What_is_AWS_Deepracer/07_Deepracer_요금_정책
 
     # s02_AWS_Account
     - file: Basic/AWS_Account/01_섹션소개
