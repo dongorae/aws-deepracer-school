@@ -12,35 +12,41 @@ parts:
     chapters:
 
     # s01_Introduction
-    - file: Basic/Introduction/01_개요
+    - file: Basic/What_is_AWS_Deepracer/01_섹션소개
       sections:
-      - file: Basic/Introduction/02_Deepracer란
-      - file: Basic/Introduction/03_클라우드_컴퓨팅과_AWS
-      - file: Basic/Introduction/04_Deepracer_워크플로우
-      - file: Basic/Introduction/05_Deepracer_작동원리
-      - file: Basic/Introduction/06_Deepracer_요금_정책
+      - file: Basic/What_is_AWS_Deepracer/02_Deepracer란
+      - file: Basic/What_is_AWS_Deepracer/03_클라우드_컴퓨팅과_AWS
+      - file: Basic/What_is_AWS_Deepracer/04_Deepracer_워크플로우
+      - file: Basic/What_is_AWS_Deepracer/05_Deepracer_작동원리
+      - file: Basic/What_is_AWS_Deepracer/06_Deepracer_요금_정책
 
-    # s01_AWS_Account
-    - file: Basic/AWS_Account/01_개요
+    # s02_AWS_Account
+    - file: Basic/AWS_Account/01_섹션소개
       sections:
       - file: Basic/AWS_Account/07_AWS_가입
       - file: Basic/AWS_Account/08_AWS_계정_설정
 
-    # Get_Started
-    - file: Basic/Get_Started/01_개요
+    # s03_Deepracer_Console
+    - file: Basic/Deepracer_Console/01_섹션소개
       sections:
-      - file: Basic/Get_Started/09_Deepracer_콘솔_둘러보기
-      # - file: Basic/Get_Started/02_CNN모델과_컴퓨터비전
+      - file: Basic/Deepracer_Console/02_Deepracer_콘솔_둘러보기
+      - file: Basic/Deepracer_Console/03_Racing_League
+      # - file: Basic/Deepracer_Console/02_CNN모델과_컴퓨터비전
 
-    # Reinforcement_Learning
-    - file: Basic/Reinforcement_Learning/01_개요
+    # s04_Model_Training
+    - file: Basic/Model_Training/01_섹션소개
+      # sections:
+      # - file: Basic/Model_Training/09_Deepracer_콘솔_둘러보기
+      # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
+
+    # s05_Reinforcement_Learning
+    - file: Basic/Reinforcement_Learning/01_섹션소개
       # sections:
       # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
       # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
 
-
-    # Python_for_Deepracer
-    - file: Basic/Python_for_Deepracer/01_개요
+    # s06_Python_for_Deepracer
+    - file: Basic/Python_for_Deepracer/01_섹션소개
       sections:
       - file: Basic/Python_for_Deepracer/02_python과_colab
       - file: Basic/Python_for_Deepracer/03_출력과_변수
@@ -54,16 +60,16 @@ parts:
       - file: Basic/Python_for_Deepracer/11_함수
       # - file: Basic/Python_for_Deepracer/12_클래스
   
-    # Reward_Function
-    - file: Basic/Reward_Function/01_개요
+    # s07_Reward_Function
+    - file: Basic/Reward_Function/01_섹션소개
       sections:
       - file: Basic/Reward_Function/02_params
       - file: Basic/Reward_Function/03_Default_examples
       - file: Basic/Reward_Function/04_Reward_function_Lab
       - file: Basic/Reward_Function/05_Track_Visualization.ipynb
   
-    # Log_Analysis
-    - file: Basic/Log_Analysis/01_개요
+    # s08_Log_Analysis
+    - file: Basic/Log_Analysis/01_섹션소개
       sections:
       - file: Basic/Log_Analysis/02_Reward_graph
       - file: Basic/Log_Analysis/03_download_logs
@@ -72,64 +78,20 @@ parts:
       # - file: Basic/Log_Analysis/06_analysis_reference
 
     # Physical_Car
-    - file: Basic/Physical_Car/01_개요
+    - file: Basic/Physical_Car/01_섹션소개
       # sections:
       # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
       # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
+  
 
-    # DRfC
-    - file: Basic/DRfC/01_개요
+    # s10_Tips
+    - file: Basic/Tips/01_섹션소개
       sections:
-      - file: Basic/Etc/05_DRfC      
+      - file: Basic/Tips/02_Deepracer_Student  
+      - file: Basic/Tips/03_Import_and_Export_Model  
+      - file: Basic/Tips/04_multi_user_mode    
+      - file: Basic/Tips/05_Auto_Submit
+      - file: Basic/Tips/06_DRfC   
+      - file: Basic/Tips/07_Resources
 
-    # Etc
-    - file: Basic/Etc/01_개요
-      sections:
-      - file: Basic/Etc/02_multi_user_mode
-      - file: Basic/Etc/03_Racing_League  
-      - file: Basic/Etc/04_Import_and_Export_Model  
-
-
-  # ###################
-  # - caption: DEVELOPER
-  #   chapters:
-  #   - file: contents/DEVELOP/IT_기초
-  #   - file: contents/DEVELOP/AWS 
-  #   - file: contents/DEVELOP/Linux_Ubuntu
-  #   - file: contents/DEVELOP/Git_Github
-  #   - file: contents/DEVELOP/Docker
-  #   - file: contents/DEVELOP/정규식
-  #   # - file: contents/DEVELOP/Python
-  #   - file: contents/DEVELOP/HTML_CSS
-  #   # - file: contents/DEVELOP/JavaScript
-  #   - file: contents/DEVELOP/utils
-  #   - file: contents/DEVELOP/VSCode
-  #   - file: contents/DEVELOP/Markdown
-  #   - file: contents/DEVELOP/Jupyter
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  # - caption: PROGRAMMING LANGUAGE
-  #   chapters:
-
-
-  # - caption: samples
-  #   chapters:
-  #   - file: contents/samples/markdown-notebooks
-  #   - file: contents/samples/markdown
-  #     sections:
-  #     - file: contents/samples/mymarkdownfile
+      
