@@ -1,0 +1,893 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>함수 &#8212; AWS Deepracer School</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reward Function" href="../Reward_Function/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html" />
+    <link rel="prev" title="while 조건반복문" href="10_while_%EC%A1%B0%EA%B1%B4%EB%B0%98%EB%B3%B5%EB%AC%B8.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">AWS Deepracer School</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    AWS Deepracer School
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../About_Dolphin.html">
+   About Dolphin
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basic Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../What_is_AWS_DeepRacer/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   AWS Deepracer 란
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/02_DeepRacer%EB%9E%80.html">
+     DeepRacer 란?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/03_%EB%B0%B0%EC%9A%B8%EC%88%98_%EC%9E%88%EB%8A%94%EA%B2%83.html">
+     배울 수 있는 것
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/04_%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C_%EC%BB%B4%ED%93%A8%ED%8C%85%EA%B3%BC_AWS.html">
+     클라우드 컴퓨팅과 AWS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/05_DeepRacer_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0.html">
+     Deepracer 워크플로우
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/06_DeepRacer_%EC%9E%91%EB%8F%99%EC%9B%90%EB%A6%AC.html">
+     Deepracer 작동원리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../What_is_AWS_DeepRacer/07_DeepRacer_%EC%9A%94%EA%B8%88_%EC%A0%95%EC%B1%85.html">
+     Deepracer 요금 정책
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../AWS_Account/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   AWS 계정 및 가입
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Account/07_AWS_%EA%B0%80%EC%9E%85.html">
+     AWS 가입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Account/08_AWS_%EA%B3%84%EC%A0%95_%EC%84%A4%EC%A0%95.html">
+     AWS 계정 설정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../DeepRacer_Console/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Deepracer Console
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DeepRacer_Console/02_DeepRacer_%EC%BD%98%EC%86%94_%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0.html">
+     Deepracer 콘솔 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../DeepRacer_Console/03_Racing_League.html">
+     Racing_League
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Model_Training/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Model_Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reinforcement_Learning/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Reinforcement Learning
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Python for Deepracer
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_python%EA%B3%BC_colab.html">
+     Python과 Colab
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_%EC%B6%9C%EB%A0%A5%EA%B3%BC_%EB%B3%80%EC%88%98.html">
+     출력과 변수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_%EC%9E%90%EB%A3%8C%ED%98%95.html">
+     자료형
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_%EC%97%B0%EC%82%B0.html">
+     연산
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_%EB%A6%AC%EC%8A%A4%ED%8A%B8_%EB%8B%A4%EB%A3%A8%EA%B8%B0.html">
+     리스트 다루기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_math_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC.html">
+     math Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_if_%EC%A1%B0%EA%B1%B4%EB%AC%B8.html">
+     if 조건문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_for_%EB%B0%98%EB%B3%B5%EB%AC%B8.html">
+     for 반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10_while_%EC%A1%B0%EA%B1%B4%EB%B0%98%EB%B3%B5%EB%AC%B8.html">
+     while 조건반복문
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     함수
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Reward_Function/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Reward Function
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/02_params.html">
+     params
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/03_Default_examples.html">
+     기본 보상함수 예제
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/04_Reward_function_Lab.html">
+     보상함수 실험
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reward_Function/05_Track_Visualization.html">
+     Track 시각화
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Log_Analysis/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Log Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/02_Reward_graph.html">
+     Reward graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/03_download_logs.html">
+     download logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/04_iteration_csv_file.html">
+     iteration csv 파일 다루기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Log_Analysis/05_print_all_params.html">
+     모든 params 출력하기
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Physical_Car/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Physical Car
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Tips/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+   Etc
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/02_DeepRacer_Student.html">
+     DeepRacer Student
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/03_Import_and_Export_Model.html">
+     Import and Export Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/04_multi_user_mode.html">
+     Multi-User Mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/05_Auto_Submit.html">
+     Auto Submit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/06_DRfC.html">
+     DRfC (Deepracer for Cloud)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tips/07_Resources.html">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Python_for_DeepRacer/11_함수.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Basic/Python_for_DeepRacer/11_함수.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   사용자 정의 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   전역변수와 지역변수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   딥레이서의 보상함수 구조
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>함수</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   사용자 정의 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   전역변수와 지역변수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   딥레이서의 보상함수 구조
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>함수<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>사용자 정의 함수<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>사용자 정의 함수(user-defined function)을 작성하여, 자주 사용되는 코드 블록을 재사용 할 수 있습니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">함수명(입력변수)</span></code> 와 같이 정의한다.</p></li>
+<li><p>첫 줄 끝에 콜론( : ) 을 붙여줘야 하며 하위 코드는 반드시 들여쓰기 (Tab 또는 Space 4번)을 해야 합니다.
+<br></p></li>
+<li><p>기본 구조는 다음과 같습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="c1"># function body</span>
+    <span class="c1"># statements</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">function_name</span></code>은 함수의 이름입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg1,</span> <span class="pre">arg2,</span> <span class="pre">...</span></code>은 함수의 인자(argument)를 나타내며, 함수를 호출할 때 전달되는 값입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">function</span> <span class="pre">body</span></code> 부분은 함수의 본체이며, 함수가 수행할 코드를 포함하고 있습니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">[expression]</span></code> 부분은 함수의 결과를 반환합니다. <code class="docutils literal notranslate"><span class="pre">return</span></code> 뒤에 위치한 <code class="docutils literal notranslate"><span class="pre">expression</span></code>은 함수의 반환 값입니다.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>예시 1</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_plus_one</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">square_plus_one</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">square_plus_one</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>예시 2</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_error</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">se</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">se</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span> <span class="o">=</span> <span class="n">square_error</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span> <span class="o">=</span> <span class="n">square_error</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>전역변수와 지역변수<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>지역 (local) 변수 : 함수 내부에서만 일시적으로 정의되는 변수</p></li>
+<li><p>전역 (global) 변수 : 함수 내부 외부에서 모두 호출되어 사용 가능한 변수</p></li>
+<li><p>사용자 정의 함수에서 정의 된 변수는 지역 변수로 생성되며 외부에서 호출이 불가하다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">변수</span></code> : 해당 변수를 전역변수로 지정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">변수</span></code> : 해당 변수를 지역변수로 지정</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 지역 변수를 함수 외부에서 호출하면 에러가 납니다.</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">local_variable</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">local_variable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">local_variable</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">local_variable</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;local_variable&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">global</span> <span class="n">global_variable</span>
+    <span class="n">global_variable</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">global_variable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">global_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>딥레이서의 보상함수 구조<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>시뮬레이션 환경으로부터 받아온 정보가 <code class="docutils literal notranslate"><span class="pre">params</span></code>에 딕셔너리로 저장되어 있습니다.</p></li>
+<li><p>보상함수는 <code class="docutils literal notranslate"><span class="pre">params</span></code> 변수를 입력받아 보상을 출력하는 구조입니다.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span>  <span class="c1"># 차량의 x 좌표</span>
+    <span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="mi">20</span><span class="p">,</span>  <span class="c1"># 차량의 y 좌표</span>
+    <span class="s1">&#39;speed&#39;</span> <span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>  <span class="c1"># 차량의 속도</span>
+    <span class="s1">&#39;steering_angle&#39;</span> <span class="p">:</span> <span class="mf">12.7</span><span class="p">,</span>  <span class="c1"># 모든 바퀴가 트랙 내부에 위치하는지 여부</span>
+    <span class="s1">&#39;all_wheels_on_track&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="c1"># 기타 등등</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>속도에 따른 보상함수 예시</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># 속도가 2보다 크면 보상 2</span>
+    <span class="k">elif</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># 속도가 1보다 크고 2 이하면 보상 1</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># 속도가 1 이하면 보상 0</span>
+
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>   <span class="c1"># 보상을 실수형으로 변환하여 리턴  </span>
+
+<span class="n">reward</span> <span class="o">=</span> <span class="n">reward_function</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Basic/Python_for_DeepRacer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="10_while_%EC%A1%B0%EA%B1%B4%EB%B0%98%EB%B3%B5%EB%AC%B8.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">while 조건반복문</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Reward_Function/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reward Function</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By dongorae (fanfrebird@naver.com)<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
