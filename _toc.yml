@@ -24,10 +24,11 @@ parts:
     # s02_AWS_Account
     - file: Basic/AWS_Account/01_섹션소개
       sections:
+      - file: Basic/AWS_Account/02_AWS_계정_종류
       - file: Basic/AWS_Account/07_AWS_가입
       - file: Basic/AWS_Account/08_AWS_계정_설정
 
-    # DeepRacer_Console
+    # s03_DeepRacer_Console
     - file: Basic/DeepRacer_Console/01_섹션소개
       sections:
       - file: Basic/DeepRacer_Console/02_DeepRacer_콘솔_둘러보기
@@ -78,13 +79,12 @@ parts:
       - file: Basic/Log_Analysis/05_print_all_params
       # - file: Basic/Log_Analysis/06_analysis_reference
 
-    # Physical_Car
-    - file: Basic/Physical_Car/01_섹션소개
+    # s09_Real_Physical_Car
+    - file: Basic/Real_Physical_Car/01_섹션소개
       # sections:
-      # - file: Basic/Physical_Car/01_DNN모델과_딥러닝
-      # - file: Basic/Physical_Car/02_CNN모델과_컴퓨터비전
+      # - file: Basic/Real_Physical_Car/01_DNN모델과_딥러닝
+      # - file: Basic/Real_Physical_Car/02_CNN모델과_컴퓨터비전
   
-
     # s10_Tips
     - file: Basic/Tips/01_섹션소개
       sections:
