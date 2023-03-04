@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Log Analysis &#8212; AWS Deepracer School</title>
+    <title>모델 자동제출 &#8212; AWS Deepracer School</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Reward graph" href="02_Reward_graph.html" />
-    <link rel="prev" title="Track 시각화" href="../Reward_Function/05_Track_Visualization.html" />
+    <link rel="next" title="DRfC (Deepracer for Cloud)" href="06_DRfC.html" />
+    <link rel="prev" title="Multi-User Mode" href="04_multi_user_mode.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -322,33 +322,33 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Log_Analysis/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
    Log Analysis
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_Reward_graph.html">
+    <a class="reference internal" href="../Log_Analysis/02_Reward_graph.html">
      Reward graph
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03_download_logs.html">
+    <a class="reference internal" href="../Log_Analysis/03_download_logs.html">
      download logs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04_iteration_csv_file.html">
+    <a class="reference internal" href="../Log_Analysis/04_iteration_csv_file.html">
      iteration csv 파일 다루기
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05_print_all_params.html">
+    <a class="reference internal" href="../Log_Analysis/05_print_all_params.html">
      모든 params 출력하기
     </a>
    </li>
@@ -359,38 +359,38 @@ const thebe_selector_output = ".output, .cell_output"
    Physical Car
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Tips/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
    Etc
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Tips/02_DeepRacer_Student.html">
+    <a class="reference internal" href="02_DeepRacer_Student.html">
      DeepRacer Student
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Tips/04_multi_user_mode.html">
+    <a class="reference internal" href="04_multi_user_mode.html">
      Multi-User Mode
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tips/05_Automated_Model_Submission.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      모델 자동제출
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Tips/06_DRfC.html">
+    <a class="reference internal" href="06_DRfC.html">
      DRfC (Deepracer for Cloud)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Tips/07_Resources.html">
+    <a class="reference internal" href="07_Resources.html">
      Resources
     </a>
    </li>
@@ -451,7 +451,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Log_Analysis/01_섹션소개.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Basic/Tips/05_Automated_Model_Submission.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -494,7 +494,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Basic/Log_Analysis/01_섹션소개.ipynb"
+        <a href="../../_sources/Basic/Tips/05_Automated_Model_Submission.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -531,23 +531,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   준비 작업
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   쉘스크립트 작성 (1개만)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   쉘스크립트 작성 (2개)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   스타트업 파일 예시
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Log Analysis</h1>
+                <h1>모델 자동제출</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   준비 작업
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   쉘스크립트 작성 (1개만)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   쉘스크립트 작성 (2개)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   스타트업 파일 예시
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -555,16 +622,152 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="log-analysis">
-<h1>Log Analysis<a class="headerlink" href="#log-analysis" title="Permalink to this headline">#</a></h1>
-<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFaX3nncvI&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div><div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>모델 자동제출<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2>준비 작업<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>설치</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 설치</span>
+pip3<span class="w"> </span>install<span class="w"> </span>deepracer-utils
+python3<span class="w"> </span>-m<span class="w"> </span>deepracer<span class="w"> </span>install-cli<span class="w"> </span>--force
+
+<span class="c1"># 확인 1</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span><span class="nb">help</span>
+
+<span class="c1"># 확인 2</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span>list-models<span class="w"> </span>--model-type<span class="w"> </span><span class="s2">&quot;REINFORCEMENT_LEARNING&quot;</span><span class="w"> </span>--region<span class="w"> </span>us-east-1
+</pre></div>
 </div>
+</li>
+<li><p>반복문 돌리기</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">do</span>
+<span class="w">  </span>sh<span class="w"> </span>submit.sh
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="c1"># 5분 간격으로 실행</span>
+<span class="k">done</span><span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</li>
+<li><p>리더보드 ARN 추출 : <a class="reference external" href="https://www.urldecoder.org/">https://www.urldecoder.org/</a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>쉘스크립트 작성 (1개만)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt;./submit.sh</span>
+<span class="s">LEADERBOARD_ARN=&quot;arn:aws:deepracer:::leaderboard/2c29f173-dfe6-456d-a0b0-0f06fe86b5a1&quot;</span>
+<span class="s">ModelName=&quot;2303-v2-2&quot;</span>
+
+<span class="s">MODEL_ARN=$(\</span>
+<span class="s">aws deepracer list-models \</span>
+<span class="s">    --model-type &quot;REINFORCEMENT_LEARNING&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --query &quot;Models[?ModelName==&#39;$ModelName&#39;].ModelArn | [0]&quot; \</span>
+<span class="s">    --output text \</span>
+<span class="s">)</span>
+
+<span class="s">while true</span>
+<span class="s">do</span>
+<span class="s">  aws deepracer create-leaderboard-submission \</span>
+<span class="s">    --model-arn &quot;${MODEL_ARN}&quot; \</span>
+<span class="s">    --leaderboard-arn &quot;${LEADERBOARD_ARN}&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --terms-accepted</span>
+<span class="s">  sleep 60 # 1분 간격으로 실행</span>
+<span class="s">done</span>
+
+
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>쉘스크립트 작성 (2개)<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt;./submit.sh</span>
+<span class="s">LEADERBOARD_ARN=&quot;arn:aws:deepracer:::leaderboard/2c29f173-dfe6-456d-a0b0-0f06fe86b5a1&quot;</span>
+<span class="s">ModelName1=&quot;2303-v1-3&quot;</span>
+<span class="s">ModelName2=&quot;2303-v2-3&quot;</span>
+
+<span class="s">MODEL_ARN1=$(\</span>
+<span class="s">aws deepracer list-models \</span>
+<span class="s">    --model-type &quot;REINFORCEMENT_LEARNING&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --query &quot;Models[?ModelName==&#39;$ModelName1&#39;].ModelArn | [0]&quot; \</span>
+<span class="s">    --output text \</span>
+<span class="s">)</span>
+
+<span class="s">MODEL_ARN2=$(\</span>
+<span class="s">aws deepracer list-models \</span>
+<span class="s">    --model-type &quot;REINFORCEMENT_LEARNING&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --query &quot;Models[?ModelName==&#39;$ModelName2&#39;].ModelArn | [0]&quot; \</span>
+<span class="s">    --output text \</span>
+<span class="s">)</span>
+
+<span class="s">while true</span>
+<span class="s">do</span>
+<span class="s">  aws deepracer create-leaderboard-submission \</span>
+<span class="s">    --model-arn &quot;${MODEL_ARN1}&quot; \</span>
+<span class="s">    --leaderboard-arn &quot;${LEADERBOARD_ARN}&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --terms-accepted</span>
+<span class="s">  sleep 600 # 10분 간격으로 실행</span>
+<span class="s">  aws deepracer create-leaderboard-submission \</span>
+<span class="s">    --model-arn &quot;${MODEL_ARN2}&quot; \</span>
+<span class="s">    --leaderboard-arn &quot;${LEADERBOARD_ARN}&quot; \</span>
+<span class="s">    --region us-east-1 \</span>
+<span class="s">    --terms-accepted</span>
+<span class="s">  sleep 600 # 10분 간격으로 실행</span>
+<span class="s">done</span>
+
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>스타트업 파일 예시<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+pip3<span class="w"> </span>install<span class="w"> </span>deepracer-utils
+python3<span class="w"> </span>-m<span class="w"> </span>deepracer<span class="w"> </span>install-cli<span class="w"> </span>--force
+
+<span class="nv">LEADERBOARD_ARN</span><span class="o">=</span><span class="s2">&quot;arn:aws:deepracer:::leaderboard/2c29f173-dfe6-456d-a0b0-0f06fe86b5a1&quot;</span>
+<span class="nv">ModelName1</span><span class="o">=</span><span class="s2">&quot;2303-v1-3&quot;</span>
+<span class="nv">ModelName2</span><span class="o">=</span><span class="s2">&quot;2303-v2-3&quot;</span>
+
+<span class="nv">MODEL_ARN1</span><span class="o">=</span><span class="k">$(</span><span class="se">\</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span>list-models<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-type<span class="w"> </span><span class="s2">&quot;REINFORCEMENT_LEARNING&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="w"> </span>us-east-1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;Models[?ModelName==&#39;</span><span class="nv">$ModelName1</span><span class="s2">&#39;].ModelArn | [0]&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span>text<span class="w"> </span><span class="se">\</span>
+<span class="k">)</span>
+
+<span class="nv">MODEL_ARN2</span><span class="o">=</span><span class="k">$(</span><span class="se">\</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span>list-models<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-type<span class="w"> </span><span class="s2">&quot;REINFORCEMENT_LEARNING&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="w"> </span>us-east-1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;Models[?ModelName==&#39;</span><span class="nv">$ModelName2</span><span class="s2">&#39;].ModelArn | [0]&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span>text<span class="w"> </span><span class="se">\</span>
+<span class="k">)</span>
+
+<span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">do</span>
+<span class="w">  </span>aws<span class="w"> </span>deepracer<span class="w"> </span>create-leaderboard-submission<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MODEL_ARN1</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--leaderboard-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LEADERBOARD_ARN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="w"> </span>us-east-1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--terms-accepted
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="c1"># 10분 간격으로 실행</span>
+<span class="w">  </span>aws<span class="w"> </span>deepracer<span class="w"> </span>create-leaderboard-submission<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--model-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MODEL_ARN2</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--leaderboard-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LEADERBOARD_ARN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="w"> </span>us-east-1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--terms-accepted
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="c1"># 10분 간격으로 실행</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -580,7 +783,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Basic/Log_Analysis"
+            path: "./Basic/Tips"
         },
         predefinedOutput: true
     }
@@ -594,17 +797,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Reward_Function/05_Track_Visualization.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04_multi_user_mode.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Track 시각화</p>
+            <p class="prev-next-title">Multi-User Mode</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_Reward_graph.html" title="next page">
+    <a class='right-next' id="next-link" href="06_DRfC.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reward graph</p>
+        <p class="prev-next-title">DRfC (Deepracer for Cloud)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
