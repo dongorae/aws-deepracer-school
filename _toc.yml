@@ -89,9 +89,9 @@ parts:
     - file: Basic/Tips/01_섹션소개
       sections:
       - file: Basic/Tips/02_DeepRacer_Student  
-      - file: Basic/Tips/03_Import_and_Export_Model  
+      - file: Basic/Tips/03_Exporting_Importing_Models_to_S3 
       - file: Basic/Tips/04_multi_user_mode    
-      - file: Basic/Tips/05_Auto_Submit
+      - file: Basic/Tips/05_Automated_Model_Submission
       - file: Basic/Tips/06_DRfC   
       - file: Basic/Tips/07_Resources
 
