@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../AWS_Account/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
-   AWS 계정 및 가입
+   AWS 계정
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -180,13 +180,18 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../AWS_Account/07_AWS_%EA%B0%80%EC%9E%85.html">
-     AWS 가입
+    <a class="reference internal" href="../AWS_Account/02_AWS_%EA%B3%84%EC%A0%95_%EC%A2%85%EB%A5%98.html">
+     AWS 계정 종류
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../AWS_Account/08_AWS_%EA%B3%84%EC%A0%95_%EC%84%A4%EC%A0%95.html">
-     AWS 계정 설정
+    <a class="reference internal" href="../AWS_Account/03_AWS_%EB%A3%A8%ED%8A%B8%EA%B3%84%EC%A0%95_%EA%B0%80%EC%9E%85.html">
+     AWS 루트계정 가입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../AWS_Account/04_AWS_%EB%A3%A8%ED%8A%B8%EA%B3%84%EC%A0%95_%EC%84%A4%EC%A0%95.html">
+     AWS 루트계정 설정
     </a>
    </li>
   </ul>
@@ -350,7 +355,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Physical_Car/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
+  <a class="reference internal" href="../Real_Physical_Car/01_%EC%84%B9%EC%85%98%EC%86%8C%EA%B0%9C.html">
    Physical Car
   </a>
  </li>
@@ -531,12 +536,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   준비 작업
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   크론 탭 쉘스크립트 작성
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -548,6 +582,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   준비 작업
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   크론 탭 쉘스크립트 작성
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -557,6 +609,71 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="auto-submit">
 <h1>Auto Submit<a class="headerlink" href="#auto-submit" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>준비 작업<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>설치</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 설치</span>
+pip3<span class="w"> </span>install<span class="w"> </span>deepracer-utils
+<span class="c1"># python3 -m deepracer install-cli --force</span>
+
+<span class="c1"># 확인 1</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span><span class="nb">help</span>
+
+<span class="c1"># 확인 2</span>
+aws<span class="w"> </span>deepracer<span class="w"> </span>list-models<span class="w"> </span>--model-type<span class="w"> </span><span class="s2">&quot;REINFORCEMENT_LEARNING&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>반복문 돌리기</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">do</span>
+<span class="w">  </span>sh<span class="w"> </span>submit.sh
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="c1"># 5분 간격으로 실행</span>
+<span class="k">done</span><span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</li>
+<li><p>리더보드 ARN 추출 : <a class="reference external" href="https://www.urldecoder.org/">https://www.urldecoder.org/</a></p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>크론 탭 쉘스크립트 작성<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt;./submit.sh</span>
+<span class="s">LEADERBOARD_ARN=&quot;arn:aws:deepracer:::leaderboard/2c29f173-dfe6-456d-a0b0-0f06fe86b5a1&quot;</span>
+<span class="s">ModelName=&quot;2303-v2-2&quot;</span>
+
+<span class="s">MODEL_ARN=$(aws deepracer list-models \</span>
+<span class="s">--model-type &quot;REINFORCEMENT_LEARNING&quot; \</span>
+<span class="s">--query &quot;Models[?ModelName==&#39;$ModelName&#39;].ModelArn | [0]&quot; \</span>
+<span class="s">--output text)</span>
+
+<span class="s">aws deepracer create-leaderboard-submission --model-arn &quot;${MODEL_ARN}&quot; --leaderboard-arn &quot;${LEADERBOARD_ARN}&quot; --region us-east-1 --terms-accepted</span>
+
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LEADERBOARD_ARN</span><span class="o">=</span><span class="s2">&quot;arn:aws:deepracer:::leaderboard/2c29f173-dfe6-456d-a0b0-0f06fe86b5a1&quot;</span>
+<span class="nv">ModelName</span><span class="o">=</span><span class="s2">&quot;2303-v2-2&quot;</span>
+
+<span class="nv">MODEL_ARN</span><span class="o">=</span><span class="k">$(</span>aws<span class="w"> </span>deepracer<span class="w"> </span>list-models<span class="w"> </span><span class="se">\</span>
+--model-type<span class="w"> </span><span class="s2">&quot;REINFORCEMENT_LEARNING&quot;</span><span class="w"> </span><span class="se">\</span>
+--query<span class="w"> </span><span class="s2">&quot;Models[?ModelName==&#39;</span><span class="nv">$ModelName</span><span class="s2">&#39;].ModelArn | [0]&quot;</span><span class="w"> </span><span class="se">\</span>
+--output<span class="w"> </span>text<span class="k">)</span>
+
+<span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">do</span>
+<span class="w">  </span>date
+<span class="w">  </span>aws<span class="w"> </span>deepracer<span class="w"> </span>create-leaderboard-submission<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MODEL_ARN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--leaderboard-arn<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LEADERBOARD_ARN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span>us-east-1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--terms-accepted
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="c1"># 1분 간격으로 실행</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
