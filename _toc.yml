@@ -25,8 +25,8 @@ parts:
     - file: Basic/AWS_Account/01_섹션소개
       sections:
       - file: Basic/AWS_Account/02_AWS_계정_종류
-      - file: Basic/AWS_Account/07_AWS_가입
-      - file: Basic/AWS_Account/08_AWS_계정_설정
+      - file: Basic/AWS_Account/03_AWS_루트계정_가입
+      - file: Basic/AWS_Account/04_AWS_루트계정_설정
 
     # s03_DeepRacer_Console
     - file: Basic/DeepRacer_Console/01_섹션소개
