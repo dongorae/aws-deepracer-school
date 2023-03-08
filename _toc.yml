@@ -28,24 +28,33 @@ parts:
       - file: Basic/AWS_Account/03_AWS_루트계정_가입
       - file: Basic/AWS_Account/04_AWS_루트계정_설정
 
-    # s03_DeepRacer_Console
-    - file: Basic/DeepRacer_Console/01_섹션소개
+    # s03_Explore_DeepRacer
+    - file: Basic/Explore_DeepRacer/01_섹션소개
       sections:
-      - file: Basic/DeepRacer_Console/02_DeepRacer_콘솔_둘러보기
-      - file: Basic/DeepRacer_Console/03_Racing_League
-      # - file: Basic/DeepRacer_Console/02_CNN모델과_컴퓨터비전
+      - file: Basic/Explore_DeepRacer/02_DeepRacer_콘솔_둘러보기
+      - file: Basic/Explore_DeepRacer/03_Racing_League
+      # - file: Basic/Explore_DeepRacer/02_CNN모델과_컴퓨터비전
 
     # s04_Model_Training
     - file: Basic/Model_Training/01_섹션소개
       # sections:
-      # - file: Basic/Model_Training/09_DeepRacer_콘솔_둘러보기
-      # - file: Basic/Model_Training/02_CNN모델과_컴퓨터비전
+      # - file: Basic/Model_Training/02_Race_type
+      # - file: Basic/Model_Training/03_Sensor_type
+      # - file: Basic/Model_Training/04_Build_new_vehicle
+      # - file: Basic/Model_Training/05_Create_model
+      # - file: Basic/Model_Training/06_Model_훈련결과_확인
+      # - file: Basic/Model_Training/07_Actions
 
     # s05_Reinforcement_Learning
     - file: Basic/Reinforcement_Learning/01_섹션소개
       # sections:
-      # - file: Basic/Reinforcement_Learning/01_DNN모델과_딥러닝
-      # - file: Basic/Reinforcement_Learning/02_CNN모델과_컴퓨터비전
+      # - file: Basic/Reinforcement_Learning/Machine_Learning
+      # - file: Basic/Reinforcement_Learning/How_machines_learn
+      # - file: Basic/Reinforcement_Learning/Models_and_Hyperparameters
+      # - file: Basic/Reinforcement_Learning/Deep_Learning
+      # - file: Basic/Reinforcement_Learning/Reinforcement_Learning_Overview
+      # - file: Basic/Reinforcement_Learning/Understanding_Reinforcement_Learning_Algorithms
+      # - file: Basic/Reinforcement_Learning/Hyperparameters
 
     # s06_Python_for_DeepRacer
     - file: Basic/Python_for_DeepRacer/01_섹션소개
